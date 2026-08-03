@@ -1,183 +1,142 @@
 <p align="center">
-  <img src="./docs/images/pawcare-banner.svg" alt="PawCare Banner" width="100%" />
+  <img src="./docs/images/pawcare-cute-banner.svg" alt="PawCare Cute Banner" width="100%" />
 </p>
 
-<div align="center">
+<h1 align="center">🐾 PawCare</h1>
 
+<p align="center">
+  <strong>A cute pastel pet-care app built with Flutter.</strong><br>
+  Soft, friendly, and designed to make daily pet care feel easier.
+</p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.x-FF9FBC?style=flat-square&logo=flutter&logoColor=white" alt="Flutter">
+  <img src="https://img.shields.io/badge/Dart-%3E%3D3.0-B59BFF?style=flat-square&logo=dart&logoColor=white" alt="Dart">
+  <img src="https://img.shields.io/badge/VI%20%7C%20EN-Bilingual-9AD8C1?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/badge/Version-1.0.0-F6B27A?style=flat-square" alt="Version">
+</p>
 
-Một nơi để lưu hồ sơ, sắp xếp lịch chăm sóc và đồng hành cùng thú cưng mỗi ngày.
+<p align="center">
+  <a href="#-about">About</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-project-structure">Project Structure</a> •
+  <a href="#-team">Team</a>
+</p>
 
-Khám phá tính năng · Cài đặt · Cấu trúc · Nhóm thực hiện
+🌸 About
 
-</div>
+PawCare là ứng dụng Flutter hỗ trợ người dùng quản lý thú cưng theo cách nhẹ nhàng, trực quan và thân thiện.
 
-🌷 PawCare là gì?
+Thay vì ghi chú rời rạc hoặc phải nhớ nhiều công việc chăm sóc mỗi ngày, PawCare giúp gom mọi thứ vào một nơi: hồ sơ thú cưng, lịch chăm sóc, lịch khám thú y và hỗ trợ SOS.Dự án được xây dựng với định hướng tạo ra một trải nghiệm mềm mại, dễ dùng và phù hợp với những người yêu thú cưng.
 
-PawCare là ứng dụng Flutter giúp người nuôi thú cưng quản lý thông tin, lịch chăm sóc và lịch khám thú y trong một trải nghiệm đơn giản, thân thiện và song ngữ.
+Academic project for Mobile Application Development — Class N01, Group 04.
+
+✨ Features
 
 <table>
-<tr>
-<td width="33%" align="center">
-<h3>🐾 Quản lý tập trung</h3>
-<p>Thông tin thú cưng, công việc và lịch hẹn nằm trong cùng một ứng dụng.</p>
-</td>
-<td width="33%" align="center">
-<h3>⏰ Chăm sóc đúng lúc</h3>
-<p>Lên lịch, theo dõi và đánh dấu các công việc chăm sóc hằng ngày.</p>
-</td>
-<td width="33%" align="center">
-<h3>💗 Dễ dùng mỗi ngày</h3>
-<p>Giao diện mềm mại, thao tác rõ ràng và hỗ trợ tiếng Việt lẫn tiếng Anh.</p>
-</td>
-</tr>
-</table>
+  <tr>
+    <td width="50%" valign="top">
 
-✨ PawCare có gì?
+🐶 Pet Profile
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-🐶 Hồ sơ thú cưng
-
-Thêm, sửa và xóa thú cưng
+Thêm, sửa và xóa hồ sơ thú cưng
 
 Theo dõi thức ăn, nước uống và dị ứng
 
-Chọn nhanh thú cưng đang cần chăm sóc
+Chọn thú cưng để quản lý chăm sóc
 
-</td>
-<td width="50%" valign="top">
-
-📆 Lịch chăm sóc
+📅 Care Planner
 
 Tạo công việc theo ngày và giờ
 
+Chỉnh sửa hoặc xóa công việc
+
 Gán công việc cho từng thú cưng
 
-Đánh dấu hoàn thành và chỉnh sửa linh hoạt
+🏥 Veterinary Services
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+Tìm kiếm phòng khám thú y
 
-🏥 Dịch vụ thú y
+Lọc và xem danh sách phù hợp
 
-Tìm kiếm và lọc phòng khám
+Đặt, sửa hoặc hủy lịch hẹn
 
-Đặt, chỉnh sửa hoặc hủy lịch khám
+Kích hoạt luồng SOS khẩn cấp
 
-Hỗ trợ luồng gọi SOS khẩn cấp
+🔐 Account & Profile
 
-</td>
-<td width="50%" valign="top">
+Đăng nhập và đăng ký
 
-🔐 Tài khoản & cá nhân
-
-Đăng nhập, đăng ký, quên mật khẩu
+Quên mật khẩu
 
 Kiểm tra dữ liệu biểu mẫu
 
-Quản lý thông tin cá nhân và xem thông tin nhóm
-
-</td>
-</tr>
 </table>
 
-<div align="center">
+💗 Highlights
 
-Pet Profile · Daily Planner · Vet Booking · SOS · Vietnamese / English
+Hỗ trợ Tiếng Việt / English
 
-</div>
+Giao diện pastel nhẹ nhàng, đúng chất pet-care app
 
-🧭 Luồng trải nghiệm
+Kiến trúc đơn giản, phù hợp phạm vi đồ án
 
-flowchart LR
-    A[Thông tin nhóm] --> B[Đăng nhập]
-    B --> C[Trang chủ]
-    C --> D[Hồ sơ thú cưng]
-    C --> E[Lịch chăm sóc]
-    C --> F[Dịch vụ thú y]
-    C --> G[Cá nhân]
-    F --> H[SOS]
+Tập trung vào trải nghiệm chăm sóc thú cưng hằng ngày
 
-    classDef primary fill:#FFF0E6,stroke:#F47745,color:#3E3330,stroke-width:2px;
-    classDef purple fill:#F3EEFF,stroke:#8768E8,color:#3E3748,stroke-width:2px;
-    classDef green fill:#EBF8F4,stroke:#2FAE8C,color:#31433E,stroke-width:2px;
-    class A,B,C primary;
-    class D,E,G purple;
-    class F,H green;
+🧁 Tech Stack
 
-🧰 Công nghệ
+Flutter
 
-<div align="center">
-
-
-
-</div>
-
-Thành phần
-
-Vai trò
-
-ChangeNotifier + AnimatedBuilder
-
-Quản lý và đồng bộ trạng thái giao diện
-
-table_calendar
-
-Hiển thị lịch và công việc theo ngày
-
-intl
-
-Định dạng ngày tháng và locale
-
-google_fonts
-
-Đồng bộ font chữ cho giao diện
+Dart
 
 Material Design
 
-Thành phần và phong cách UI chính
+ChangeNotifier + AnimatedBuilder
 
-🚀 Chạy dự án
+table_calendar
+
+intl
+
+google_fonts
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  table_calendar: ^3.1.2
+  intl: ^0.19.0
+  google_fonts: ^6.2.1
+
+🚀 Getting Started
 
 1. Clone repository
 
 git clone https://github.com/duyphamdevx/2025_2026_3_2_LTTBDD_N01_Nhom_04.git
 cd 2025_2026_3_2_LTTBDD_N01_Nhom_04
 
-2. Khởi tạo cấu trúc Flutter
+2. Create Flutter platform folders
 
-Repository tập trung vào mã nguồn trong lib/. Tạo các thư mục nền tảng còn thiếu bằng lệnh:
+Repository hiện tập trung vào mã nguồn trong lib/, vì vậy hãy tạo các thư mục nền tảng còn thiếu bằng:
 
 flutter create .
 
-3. Cài dependencies và chạy
+3. Install dependencies
 
 flutter pub get
+
+4. Run the app
+
 flutter run
 
-<details>
-<summary><b>Một số lệnh hữu ích</b></summary>
+Chạy trên Chrome:
 
-# Kiểm tra môi trường
-flutter doctor
-
-# Xem danh sách thiết bị
-flutter devices
-
-# Chạy trên trình duyệt Chrome
 flutter run -d chrome
 
-</details>
+Kiểm tra môi trường:
 
-🗂 Cấu trúc dự án
+flutter doctor
 
-<details open>
-<summary><b>Xem cây thư mục chính</b></summary>
+🗂 Project Structure
 
 lib/
 ├── main.dart
@@ -207,45 +166,43 @@ lib/
     ├── bottom_nav.dart
     └── language_badge.dart
 
-</details>
+🌼 Current Scope
 
-flowchart TD
-    UI[Screens & Widgets] --> STATE[AppState]
-    STATE --> PET[Pet]
-    STATE --> TASK[Task]
-    STATE --> APPOINTMENT[Appointment]
-    STATE --> CLINIC[Clinic]
-    UI --> L10N[VI / EN Strings]
-    UI --> THEME[App Theme]
+PawCare hiện là prototype học tập, nên vẫn còn một số giới hạn:
 
-    classDef ui fill:#FFF0E6,stroke:#F47745,color:#3E3330;
-    classDef state fill:#F3EEFF,stroke:#8768E8,color:#3E3748;
-    classDef model fill:#EBF8F4,stroke:#2FAE8C,color:#31433E;
-    class UI,L10N,THEME ui;
-    class STATE state;
-    class PET,TASK,APPOINTMENT,CLINIC model;
+Xác thực và quên mật khẩu đang ở mức mô phỏng
 
-🌏 Hỗ trợ song ngữ
+Dữ liệu được lưu trong bộ nhớ tạm
 
-PawCare cho phép chuyển đổi tức thì giữa Tiếng Việt và English. Các chuỗi giao diện được quản lý tập trung tại:
+Danh sách phòng khám là dữ liệu mẫu
 
-lib/l10n/app_strings.dart
+SOS chưa gọi điện thực tế
 
-👩‍💻 Nhóm thực hiện
+Chưa tích hợp Maps, GPS, notification hoặc backend
 
-<div align="center">
+🌱 Roadmap
 
-Nhóm 04 · Lớp N01
+Kết nối Firebase Authentication
 
-Môn Lập trình thiết bị di động
+Lưu dữ liệu với Firestore hoặc REST API
 
-</div>
+Lưu phiên đăng nhập cục bộ
+
+Tích hợp bản đồ và định vị
+
+Thêm nhắc lịch chăm sóc
+
+Hỗ trợ ảnh thật của thú cưng
+
+Bổ sung dark mode và test tự động
+
+👩‍💻 Team
 
 Thành viên
 
 MSSV
 
-Phụ trách chính
+Phụ trách
 
 Phạm Thế Duy
 
@@ -257,44 +214,17 @@ Phạm Thảo Hiền Vy
 
 24100439
 
-Trang chủ và quản lý hồ sơ thú cưng
+Trang chủ và hồ sơ thú cưng
 
 Nguyễn Hoàng Nam
 
 24100136
 
-Xác thực, quên mật khẩu và hồ sơ cá nhân
+Đăng nhập, quên mật khẩu và hồ sơ cá nhân
 
-<div align="center">
+Giảng viên hướng dẫn: ThS. Nguyễn Xuân QuếMôn học: Lập trình thiết bị di độngLớp: N01Nhóm: 04
 
-Giảng viên hướng dẫn: ThS. Nguyễn Xuân Quế
-
-</div>
-
-🛣 Hướng phát triển
-
-Kết nối Firebase Authentication và Firestore
-
-Lưu phiên đăng nhập và dữ liệu cục bộ
-
-Thêm Google Maps, GPS và phòng khám thực tế
-
-Gửi thông báo nhắc lịch chăm sóc
-
-Cho phép tải ảnh thú cưng
-
-Bổ sung dark mode và automated tests
-
-📌 Trạng thái hiện tại
-
-Đây là dự án học tập. Luồng đăng nhập, dữ liệu phòng khám, lịch hẹn và SOS hiện được mô phỏng; dữ liệu chưa được lưu lâu dài sau khi đóng ứng dụng.
-
-<div align="center">
-
-🐾 Small routines. Happier pets.
-
-Made with 🧡 by PawCare Team — Nhóm 04
-
-⬆ Trở về đầu trang
-
-</div>
+<p align="center">
+  <strong>Made with 💖 for pet lovers</strong><br>
+  PawCare — soft routines, happier pets.
+</p>

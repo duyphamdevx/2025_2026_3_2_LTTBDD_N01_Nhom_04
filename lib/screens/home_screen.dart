@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                    children: tasks.map((task) {
                                      return _TaskTile(
                                        task: task,
-                                        onToggle: () {},
+                                        onToggle: () => appState.toggleTask(task),
                                         );}).toList(),
                                       ),
                                     ),
@@ -302,4 +302,3 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
                 }
-                

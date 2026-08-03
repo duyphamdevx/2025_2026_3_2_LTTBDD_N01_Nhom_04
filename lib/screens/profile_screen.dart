@@ -5,6 +5,7 @@ import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_bottom_sheet.dart';
 import '../widgets/language_badge.dart';
+import 'login_screen.dart';
 import 'team_info_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -226,6 +227,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           );
                         },
                       ),
+                      const SizedBox(height: 20),
+                      _MenuTile(
+                        icon: Icons.logout_rounded,
+                        iconColor: AppColors.primaryOrangeDark,
+                        iconBg: AppColors.pinkLight,
+                        label: t('logout'),
+                        labelColor: AppColors.primaryOrangeDark,
+                        onTap: () {
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (_) => const LoginScreen(),
+                            ),
+                            (route) => false,
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -243,6 +260,7 @@ class _MenuTile extends StatelessWidget {
   final Color iconColor;
   final Color iconBg;
   final String label;
+  final Color? labelColor;
   final String? trailingText;
   final Widget? trailing;
   final bool showChevron;
@@ -254,6 +272,7 @@ class _MenuTile extends StatelessWidget {
     required this.iconBg,
     required this.label,
     required this.onTap,
+    this.labelColor,
     this.trailingText,
     this.trailing,
     this.showChevron = false,
@@ -285,9 +304,9 @@ class _MenuTile extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  color: AppColors.textDark,
+                  color: labelColor ?? AppColors.textDark,
                 ),
               ),
             ),

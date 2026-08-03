@@ -284,7 +284,7 @@ class _TaskTile extends StatelessWidget {
       ),
       const SizedBox(height: 2),
      Text(task.isDone ? '${task.time} · ${t('done_at')}' : task.time,style: const TextStyle( fontSize: 12,
-     color: Color.fromARGB(255, 133, 125, 125),
+     color:AppColors.textGrey,
       ),
      ),
     ],

@@ -248,6 +248,20 @@ class _TaskTile extends StatelessWidget {
     margin: const EdgeInsets.only(bottom: 12),
     padding: const EdgeInsets.all(14),
     decoration: AppTheme.cardDecoration(),
-    child: const SizedBox.shrink(),
-  );
+    child: Row(
+      children: [GestureDetector(
+      onTap: onToggle,
+      child: Icon(
+        task.isDone
+            ? Icons.check_circle_rounded
+            : Icons.radio_button_unchecked_rounded,
+        color: task.isDone
+            ? AppColors.success
+            : AppColors.textGrey,
+        size: 26,
+      ),
+    ),
+  ],
+),
+);
 }

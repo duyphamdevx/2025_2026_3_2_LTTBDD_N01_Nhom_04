@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import '../theme/app_theme.dart';
 import '../state/app_state.dart';
+import '../state/app_state.dart';
+import '../l10n/app_strings.dart';
+import '../widgets/language_badge.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,17 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         final activePet = pets[_selectedPetIndex];
 
-        return SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(activePet.name),
-                Text('Số công việc: ${tasks.length}'),
-              ],
-            ),
-          ),
-        );
+        
       },
     );
   }

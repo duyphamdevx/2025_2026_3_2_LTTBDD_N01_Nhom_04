@@ -274,12 +274,12 @@ class _TaskTile extends StatelessWidget {
     Expanded(
        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
        children: [
-        Text( task.title,style: const TextStyle(
-          fontWeight: FontWeight.w600,
-          color: AppColors.textDark,
-           ),
-          ),
-        ],
+        Text(task.title,style: TextStyle(
+            fontWeight: FontWeight.w600, decoration: task.isDone ? TextDecoration.lineThrough: null,
+             color: task.isDone ? AppColors.textGrey: AppColors.textDark,
+             ),
+            ),
+          ],
         ),
       ),
       const SizedBox(height: 2),

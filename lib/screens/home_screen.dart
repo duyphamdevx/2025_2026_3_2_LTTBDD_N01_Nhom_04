@@ -175,8 +175,16 @@ class _QuickAction extends StatelessWidget {
               color:AppColors.secondaryTeal,
             ),
           ),
-        ],
-      ),
-    );
-  }
+          const SizedBox(height: 6),
+          Text(
+          label,
+          style: const TextStyle(
+          fontSize: 11,
+          color: AppColors.textDark,
+          ),
+        ),
+      ], 
+    ),
+  );
+ }
 }

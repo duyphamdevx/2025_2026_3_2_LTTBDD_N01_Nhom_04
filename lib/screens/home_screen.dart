@@ -274,19 +274,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(task.title,style: TextStyle(
-                            fontWeight: FontWeight.w600, decoration: task.isDone ? TextDecoration.lineThrough: null,
-                            color: task.isDone ? AppColors.textGrey: AppColors.textDark,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            task.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              decoration: task.isDone
+                                  ? TextDecoration.lineThrough
+                                  : null,
+                              color: task.isDone
+                                  ? AppColors.textGrey
+                                  : AppColors.textDark,
                             ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            task.isDone
+                                ? '${task.time} · ${t('done_at')}'
+                                : task.time,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: AppColors.textGrey,
                             ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                    Text(task.isDone ? '${task.time} · ${t('done_at')}' : task.time,style: const TextStyle( fontSize: 12,
-                    color:AppColors.textGrey,
+                          ),
+                        ],
                       ),
                     ),
                     ],

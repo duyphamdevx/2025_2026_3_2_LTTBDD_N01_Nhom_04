@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../models/task.dart';
 import '../state/app_state.dart';
 import '../l10n/app_strings.dart';
 import '../widgets/language_badge.dart';
@@ -231,5 +232,19 @@ class _QuickAction extends StatelessWidget {
     ),
   );
  }
+}
+class _TaskTile extends StatelessWidget {
+  final PetTask task;
+  final VoidCallback onToggle;
+
+  const _TaskTile({
+    required this.task,
+    required this.onToggle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox.shrink();
+  }
 }
 

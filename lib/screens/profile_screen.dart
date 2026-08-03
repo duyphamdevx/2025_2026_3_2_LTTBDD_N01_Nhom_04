@@ -133,6 +133,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
                       ),
+                      const SizedBox(height: 10),
+                      _MenuTile(
+                        icon: Icons.language_rounded,
+                        iconColor: AppColors.secondaryTeal,
+                        iconBg: AppColors.tealLight,
+                        label: t('language'),
+                        trailingText: appState.language.toUpperCase(),
+                        showChevron: true,
+                        onTap: () => openLanguagePicker(context),
+                      ),
                     ],
                   ),
                 ),
@@ -151,6 +161,7 @@ class _MenuTile extends StatelessWidget {
   final Color iconBg;
   final String label;
   final VoidCallback onTap;
+  final String? trailingText;
   final bool showChevron;
 
   const _MenuTile({
@@ -159,6 +170,7 @@ class _MenuTile extends StatelessWidget {
     required this.iconBg,
     required this.label,
     required this.onTap,
+    this.trailingText,
     this.showChevron = false,
   });
 
@@ -194,6 +206,25 @@ class _MenuTile extends StatelessWidget {
                 ),
               ),
             ),
+            if (trailingText != null)
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.pinkLight,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  trailingText!,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryOrangeDark,
+                  ),
+                ),
+              ),
             if (showChevron) ...[
               const SizedBox(width: 4),
               const Icon(

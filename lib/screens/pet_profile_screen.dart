@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_strings.dart';
 import '../models/pet.dart';
 import '../state/app_state.dart';
 
@@ -22,9 +23,25 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
         final pets = appState.pets;
 
         return SafeArea(
-          child: Center(
-            child: Text(
-              'Có ${pets.length} thú cưng',
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  t('pet_management_title'),
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  t('pet_list_subtitle'),
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text('Có ${pets.length} thú cưng'),
+              ],
             ),
           ),
         );

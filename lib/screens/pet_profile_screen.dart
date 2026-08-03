@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_theme.dart';
 import '../l10n/app_strings.dart';
 import '../models/pet.dart';
 import '../state/app_state.dart';
+import '../theme/app_theme.dart';
 import '../widgets/language_badge.dart';
 
 class PetProfileScreen extends StatefulWidget {
@@ -16,6 +16,57 @@ class PetProfileScreen extends StatefulWidget {
 class _PetProfileScreenState extends State<PetProfileScreen> {
   Pet? _selectedPet;
   int _tabIndex = 2;
+
+  void _confirmDeletePet(Pet pet) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: Text(t('delete_pet_title')),
+        content: Text(
+          t('delete_pet_confirm').replaceFirst('{pet}', pet.name),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(
+              t('no'),
+              style: const TextStyle(
+                color: AppColors.textGrey,
+              ),
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.allergyRed,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+              appState.removePet(pet);
+
+              setState(() {
+                _selectedPet = null;
+              });
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    t('pet_deleted_snack').replaceFirst(
+                      '{pet}',
+                      pet.name,
+                    ),
+                  ),
+                ),
+              );
+            },
+            child: Text(t('yes')),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +102,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       const SizedBox(height: 20),
                       if (pets.isEmpty)
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 40),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 40,
+                          ),
                           child: Center(
                             child: Text(
                               t('no_pets'),
@@ -65,8 +118,10 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                         ...pets.asMap().entries.map((entry) {
                           final index = entry.key;
                           final pet = entry.value;
+
                           final baseColor = AppColors.petPalette[
                               index % AppColors.petPalette.length];
+
                           final genderLabel = pet.gender == 'female'
                               ? t('female')
                               : t('male');
@@ -94,7 +149,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                                     child: Center(
                                       child: Text(
                                         pet.emoji,
-                                        style: const TextStyle(fontSize: 28),
+                                        style: const TextStyle(
+                                          fontSize: 28,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -179,7 +236,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                           child: Center(
                             child: Text(
                               _selectedPet!.emoji,
-                              style: const TextStyle(fontSize: 52),
+                              style: const TextStyle(
+                                fontSize: 52,
+                              ),
                             ),
                           ),
                         ),
@@ -194,7 +253,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       const SizedBox(height: 4),
                       Center(
                         child: Text(
-                          '${_selectedPet!.species} · ${_selectedPet!.age} ${t('years_old')} · ${_selectedPet!.gender == 'female' ? t('female') : t('male')}',
+                          '${_selectedPet!.species} · '
+                          '${_selectedPet!.age} ${t('years_old')} · '
+                          '${_selectedPet!.gender == 'female' ? t('female') : t('male')}',
                           style: const TextStyle(
                             color: AppColors.textGrey,
                           ),
@@ -228,7 +289,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                           const SizedBox(width: 12),
                           Expanded(
                             child: OutlinedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                _confirmDeletePet(_selectedPet!);
+                              },
                               icon: const Icon(
                                 Icons.delete_rounded,
                                 size: 18,

@@ -15,6 +15,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   bool _notificationsOn = true;
+
   void _openEditProfileSheet() {
     final nameController = TextEditingController(
       text: appState.ownerName,
@@ -144,6 +145,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         showChevron: true,
                         onTap: () => openLanguagePicker(context),
                       ),
+                      const SizedBox(height: 12),
+                      _MenuTile(
+                        icon: Icons.notifications_rounded,
+                        iconColor: Colors.amber.shade700,
+                        iconBg: Colors.amber.shade100,
+                        label: t('notifications'),
+                        trailing: Switch(
+                          value: _notificationsOn,
+                          activeColor: AppColors.secondaryTeal,
+                          onChanged: (value) {
+                            setState(() {
+                              _notificationsOn = value;
+                            });
+                          },
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _notificationsOn = !_notificationsOn;
+                          });
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -161,9 +183,10 @@ class _MenuTile extends StatelessWidget {
   final Color iconColor;
   final Color iconBg;
   final String label;
-  final VoidCallback onTap;
   final String? trailingText;
+  final Widget? trailing;
   final bool showChevron;
+  final VoidCallback onTap;
 
   const _MenuTile({
     required this.icon,
@@ -172,6 +195,7 @@ class _MenuTile extends StatelessWidget {
     required this.label,
     required this.onTap,
     this.trailingText,
+    this.trailing,
     this.showChevron = false,
   });
 
@@ -226,6 +250,7 @@ class _MenuTile extends StatelessWidget {
                   ),
                 ),
               ),
+            if (trailing != null) trailing!,
             if (showChevron) ...[
               const SizedBox(width: 4),
               const Icon(

@@ -200,6 +200,56 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 16),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton.icon(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.edit_rounded,
+                                size: 18,
+                              ),
+                              label: Text(t('edit')),
+                              style: OutlinedButton.styleFrom(
+                                foregroundColor: AppColors.secondaryTeal,
+                                side: const BorderSide(
+                                  color: AppColors.secondaryTeal,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 12,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: OutlinedButton.icon(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.delete_rounded,
+                                size: 18,
+                              ),
+                              label: Text(t('delete')),
+                              style: OutlinedButton.styleFrom(
+                                foregroundColor: AppColors.allergyRed,
+                                side: const BorderSide(
+                                  color: AppColors.allergyRed,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

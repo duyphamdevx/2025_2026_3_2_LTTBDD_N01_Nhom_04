@@ -21,6 +21,7 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
   void _openPetForm() {
     final nameController = TextEditingController();
     final speciesController = TextEditingController();
+    final ageController = TextEditingController();
 
     showAppBottomSheet(
       context: context,
@@ -53,6 +54,21 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
             controller: speciesController,
             decoration: InputDecoration(
               hintText: t('species_hint'),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            t('age'),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 6),
+          TextField(
+            controller: ageController,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              hintText: t('age_hint'),
             ),
           ),
           const SizedBox(height: 20),
@@ -586,7 +602,9 @@ class _NeedCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             label,
-            style: const TextStyle(fontSize: 12),
+            style: const TextStyle(
+              fontSize: 12,
+            ),
           ),
         ],
       ),

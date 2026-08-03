@@ -22,6 +22,10 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
     final nameController = TextEditingController();
     final speciesController = TextEditingController();
     final ageController = TextEditingController();
+    final waterController = TextEditingController();
+    final foodController = TextEditingController();
+    final allergyController = TextEditingController();
+
     String gender = 'female';
 
     showAppBottomSheet(
@@ -105,6 +109,48 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                   ),
                 ],
               ),
+              const SizedBox(height: 14),
+              Text(
+                t('water'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: waterController,
+                decoration: InputDecoration(
+                  hintText: t('water_hint'),
+                ),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                t('diet'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: foodController,
+                decoration: InputDecoration(
+                  hintText: t('diet_hint'),
+                ),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                t('allergy'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: allergyController,
+                decoration: InputDecoration(
+                  hintText: t('allergy_hint'),
+                ),
+              ),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -135,7 +181,9 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             child: Text(
               t('no'),
               style: const TextStyle(

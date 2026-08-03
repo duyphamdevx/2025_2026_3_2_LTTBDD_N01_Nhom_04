@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../state/app_state.dart';
+import '../l10n/app_strings.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -30,15 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       bottomRight: Radius.circular(28),
                     ),
                   ),
-                  child: Text(
-                    appState.ownerName,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                ), 
               ],
             ),
           ),

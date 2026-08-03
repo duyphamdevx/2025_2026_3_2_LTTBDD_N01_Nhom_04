@@ -116,6 +116,55 @@ class _MenuTile extends StatelessWidget {
           ],
         ),
       ),
-    );
+      const SizedBox(height: 20),
+
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 20),
+  child: Column(
+    children: [
+      _MenuTile(
+        icon: Icons.edit_rounded,
+        iconColor: AppColors.primaryOrangeDark,
+        iconBg: AppColors.pinkLight,
+        label: t('edit_profile'),
+        onTap: () {},
+      ),
+    ],
+  ),
+),
+const SizedBox(height: 20),
+
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 20),
+  child: Column(
+    children: [
+      _MenuTile(
+        icon: Icons.edit_rounded,
+        iconColor: AppColors.primaryOrangeDark,
+        iconBg: AppColors.pinkLight,
+        label: t('edit_profile'),
+        onTap: () {},
+      ),
+    ],
+  ),
+),
+     const SizedBox(height: 20),
+
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          _MenuTile(
+            icon: Icons.edit_rounded,
+            iconColor: AppColors.primaryOrangeDark,
+            iconBg: AppColors.pinkLight,
+            label: t('edit_profile'),
+            onTap: () {},
+          ),
+        ],
+      ),
+    ),
+   );
+    
   }
 }

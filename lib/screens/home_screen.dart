@@ -161,7 +161,22 @@ class _QuickAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: const SizedBox.shrink(),
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height:60,
+            decoration:BoxDecoration(
+             color: AppColors.tealLight,
+             borderRadius: BorderRadius.circular(16) 
+            ),
+            child: Icon(
+              icon,
+              color:AppColors.secondaryTeal,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

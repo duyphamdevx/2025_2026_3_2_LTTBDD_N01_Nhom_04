@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../theme/app_theme.dart';
 import '../l10n/app_strings.dart';
 import '../models/pet.dart';
 import '../state/app_state.dart';
@@ -43,11 +44,24 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                 Text(
                   t('pet_list_subtitle'),
                   style: const TextStyle(
-                    color: Colors.grey,
+                    color: AppColors.textGrey,
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text('Có ${pets.length} thú cưng'),
+                if (pets.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 40),
+                    child: Center(
+                      child: Text(
+                        t('no_pets'),
+                        style: const TextStyle(
+                          color: AppColors.textGrey,
+                        ),
+                      ),
+                    ),
+                  )
+                else
+                  Text('Có ${pets.length} thú cưng'),
               ],
             ),
           ),
@@ -55,4 +69,4 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
       },
     );
   }
-} 
+}

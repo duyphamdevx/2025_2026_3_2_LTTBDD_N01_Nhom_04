@@ -191,16 +191,14 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       return;
                     }
 
-                    final name = nameController.text.trim();
-
                     final species = speciesController.text.trim().isEmpty
                         ? 'Chưa rõ loài'
                         : speciesController.text.trim();
 
-                    final age = int.tryParse(
-                          ageController.text.trim(),
-                        ) ??
-                        1;
+                    final age =
+                        int.tryParse(ageController.text.trim()) ?? 1;
+
+                    final name = nameController.text.trim();
 
                     if (existing == null) {
                       appState.addPet(
@@ -235,9 +233,10 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                               ? existing.waterInfo
                               : waterController.text.trim();
 
-                      existing.foodInfo = foodController.text.trim().isEmpty
-                          ? existing.foodInfo
-                          : foodController.text.trim();
+                      existing.foodInfo =
+                          foodController.text.trim().isEmpty
+                              ? existing.foodInfo
+                              : foodController.text.trim();
 
                       existing.allergyInfo =
                           allergyController.text.trim().isEmpty
@@ -245,7 +244,6 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                               : allergyController.text.trim();
 
                       appState.notifyPetsChanged();
-
                       setState(() {});
 
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -306,7 +304,6 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
             ),
             onPressed: () {
               Navigator.of(context).pop();
-
               appState.removePet(pet);
 
               setState(() {
@@ -754,10 +751,18 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
         children: [
           Row(
             children: [
-              Icon(
-                icon,
-                color: foregroundColor,
-                size: 20,
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: backgroundColor,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  icon,
+                  color: foregroundColor,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 8),
               Text(

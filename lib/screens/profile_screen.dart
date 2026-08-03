@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../l10n/app_strings.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../widgets/app_bottom_sheet.dart';
 import '../widgets/language_badge.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -12,6 +14,46 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  void _openEditProfileSheet() {
+    final nameController = TextEditingController(
+      text: appState.ownerName,
+    );
+
+    showAppBottomSheet(
+      context: context,
+      title: t('edit_profile'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            t('your_name'),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 6),
+          TextField(
+            controller: nameController,
+            decoration: InputDecoration(
+              hintText: t('display_name_hint'),
+            ),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                appState.updateOwnerName(nameController.text);
+                Navigator.of(context).pop();
+              },
+              child: Text(t('save')),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -81,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         iconBg: AppColors.pinkLight,
                         label: t('edit_profile'),
                         showChevron: true,
-                        onTap: () {},
+                        onTap: _openEditProfileSheet,
                       ),
                     ],
                   ),

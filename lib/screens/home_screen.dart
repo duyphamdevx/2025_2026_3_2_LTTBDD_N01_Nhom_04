@@ -159,6 +159,9 @@ class _QuickAction extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return const SizedBox.shrink();
+    return GestureDetector(
+      onTap: onTap,
+      child: const SizedBox.shrink(),
+    );
   }
 }

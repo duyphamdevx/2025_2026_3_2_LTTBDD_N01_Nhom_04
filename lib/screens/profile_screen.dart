@@ -188,7 +188,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         label: t('notifications'),
                         trailing: Switch(
                           value: _notificationsOn,
-                          activeColor: AppColors.secondaryTeal,
+                          activeThumbColor: AppColors.secondaryTeal,
                           onChanged: (value) {
                             setState(() {
                               _notificationsOn = value;

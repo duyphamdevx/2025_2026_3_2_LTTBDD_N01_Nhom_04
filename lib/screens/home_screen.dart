@@ -111,36 +111,45 @@ class _HomeScreenState extends State<HomeScreen> {
                         index % AppColors.petPalette.length
                       ];
 
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedPetIndex = index;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 180),
-                          width: 76,
-                          decoration: BoxDecoration(
-                            color: baseColor,
-                            borderRadius: BorderRadius.circular(24),
-                            border: selected
-                                ? Border.all(
-                                    color: AppColors.primaryOrangeDark,
-                                    width: 3,
-                                  )
-                                : null,
-                          ),
-                          child: Center(
-                            child: Text(
-                              pet.emoji,
-                              style: const TextStyle(fontSize: 36),
-                            ),
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedPetIndex = index;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 180),
+                        width: 76,
+                        decoration: BoxDecoration(
+                          color: baseColor,
+                          borderRadius: BorderRadius.circular(24),
+                          border: selected
+                              ? Border.all(
+                                  color: AppColors.primaryOrangeDark,
+                                  width: 3,
+                                )
+                              : null,
+                          boxShadow: selected
+                              ? [
+                                  BoxShadow(
+                                    color: AppColors.primaryOrangeDark.withOpacity(0.28),
+                                    blurRadius: 12,
+                                    offset: const Offset(0, 4),
+                                  ),
+                                ]
+                              : null,
+                        ),
+                        child: Center(
+                          child: Text(
+                            pet.emoji,
+                            style: const TextStyle(fontSize: 36),
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
+              ),
                  const SizedBox(height: 20),
                  Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -305,4 +314,4 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 );
-                }
+              }

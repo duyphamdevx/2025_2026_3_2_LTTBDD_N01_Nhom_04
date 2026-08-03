@@ -213,6 +213,9 @@ flutter doctor
 </table>
 
 🗂 Cấu trúc dự án
+
+
+<pre>
 lib/
 ├── main.dart
 ├── l10n/
@@ -240,6 +243,7 @@ lib/
     ├── app_bottom_sheet.dart
     ├── bottom_nav.dart
     └── language_badge.dart
+</pre>
 
 <table>
 <tr>

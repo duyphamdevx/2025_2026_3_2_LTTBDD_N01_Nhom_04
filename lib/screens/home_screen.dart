@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(24),
                             border: selected
                                 ? Border.all(
-                                    color: AppColos.primaryOrangeDark,
+                                    color: AppColors.primaryOrangeDark,
                                     width: 3,
                                   )
                                 : null,

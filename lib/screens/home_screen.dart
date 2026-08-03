@@ -230,15 +230,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: AppColors.textDark,
                           ),
                         ),
-                        const SizedBox(height: 6),
-
-                          Text(
-                            label,
-                            style: const TextStyle(
-                            fontSize: 11,
-                            color: AppColors.textDark,
-                        ),
-                      ),
                       ],    
                     ),
                   );

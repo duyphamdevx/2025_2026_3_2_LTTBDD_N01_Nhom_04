@@ -22,66 +22,102 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
     final nameController = TextEditingController();
     final speciesController = TextEditingController();
     final ageController = TextEditingController();
+    String gender = 'female';
 
     showAppBottomSheet(
       context: context,
       title: t('add_pet_title'),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            t('pet_name'),
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 6),
-          TextField(
-            controller: nameController,
-            decoration: InputDecoration(
-              hintText: t('pet_name_hint'),
-            ),
-          ),
-          const SizedBox(height: 14),
-          Text(
-            t('species'),
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 6),
-          TextField(
-            controller: speciesController,
-            decoration: InputDecoration(
-              hintText: t('species_hint'),
-            ),
-          ),
-          const SizedBox(height: 14),
-          Text(
-            t('age'),
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 6),
-          TextField(
-            controller: ageController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              hintText: t('age_hint'),
-            ),
-          ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text(t('add_pet_button')),
-            ),
-          ),
-        ],
+      child: StatefulBuilder(
+        builder: (context, setSheetState) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                t('pet_name'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  hintText: t('pet_name_hint'),
+                ),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                t('species'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: speciesController,
+                decoration: InputDecoration(
+                  hintText: t('species_hint'),
+                ),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                t('age'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 6),
+              TextField(
+                controller: ageController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  hintText: t('age_hint'),
+                ),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                t('gender'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  SelectableChip(
+                    label: t('female'),
+                    selected: gender == 'female',
+                    onTap: () {
+                      setSheetState(() {
+                        gender = 'female';
+                      });
+                    },
+                  ),
+                  const SizedBox(width: 10),
+                  SelectableChip(
+                    label: t('male'),
+                    selected: gender == 'male',
+                    onTap: () {
+                      setSheetState(() {
+                        gender = 'male';
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(t('add_pet_button')),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

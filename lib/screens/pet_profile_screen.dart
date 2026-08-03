@@ -129,6 +129,80 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
     );
   }
 
+  Widget _buildTabContent(Pet pet) {
+    late final IconData icon;
+    late final String title;
+    late final String content;
+    late final Color backgroundColor;
+    late final Color foregroundColor;
+
+    switch (_tabIndex) {
+      case 0:
+        icon = Icons.water_drop_rounded;
+        title = t('water');
+        content = pet.waterInfo;
+        backgroundColor = AppColors.pinkLight;
+        foregroundColor = AppColors.primaryOrangeDark;
+        break;
+      case 1:
+        icon = Icons.restaurant_rounded;
+        title = t('diet');
+        content = pet.foodInfo;
+        backgroundColor = AppColors.tealLight;
+        foregroundColor = AppColors.secondaryTeal;
+        break;
+      default:
+        icon = Icons.warning_amber_rounded;
+        title = t('allergy');
+        content = pet.allergyInfo;
+        backgroundColor = AppColors.allergyRedBg;
+        foregroundColor = AppColors.allergyRed;
+    }
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: AppTheme.cardDecoration(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: backgroundColor,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  icon,
+                  color: foregroundColor,
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: foregroundColor,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Text(
+            content,
+            style: const TextStyle(
+              color: AppColors.textDark,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -231,7 +305,8 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                                         ),
                                         const SizedBox(height: 2),
                                         Text(
-                                          '${pet.species} · ${pet.age} ${t('years_old')} · $genderLabel',
+                                          '${pet.species} · ${pet.age} '
+                                          '${t('years_old')} · $genderLabel',
                                           style: const TextStyle(
                                             fontSize: 12,
                                             color: AppColors.textGrey,
@@ -376,6 +451,8 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       ),
                       const SizedBox(height: 20),
                       _buildPetTabs(),
+                      const SizedBox(height: 16),
+                      _buildTabContent(_selectedPet!),
                     ],
                   ),
                 ),

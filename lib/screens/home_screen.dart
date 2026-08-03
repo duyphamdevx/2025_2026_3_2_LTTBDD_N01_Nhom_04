@@ -150,6 +150,11 @@ class _HomeScreenState extends State<HomeScreen> {
                              icon: Icons.pets_rounded,
                               label: t('quick_pet'),onTap: () => appState.goToTab(1),
                                ),
+                               _QuickAction(
+                                 icon: Icons.calendar_month_rounded,
+                                  label: t('quick_calendar'),
+                                   onTap: () => appState.goToTab(2),
+                                   ),
                               ],
                              ),
                             ),

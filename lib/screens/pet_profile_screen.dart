@@ -68,6 +68,67 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
     );
   }
 
+  Widget _buildPetTabs() {
+    final tabs = [
+      t('water'),
+      t('diet'),
+      t('allergy'),
+    ];
+
+    final colors = [
+      AppColors.pinkLight,
+      AppColors.tealLight,
+      AppColors.allergyRedBg,
+    ];
+
+    final selectedTextColors = [
+      AppColors.primaryOrangeDark,
+      AppColors.secondaryTeal,
+      AppColors.allergyRed,
+    ];
+
+    return Row(
+      children: List.generate(tabs.length, (index) {
+        final selected = index == _tabIndex;
+
+        return Expanded(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                _tabIndex = index;
+              });
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                right: index != tabs.length - 1 ? 8 : 0,
+              ),
+              padding: const EdgeInsets.symmetric(
+                vertical: 10,
+              ),
+              decoration: BoxDecoration(
+                color: selected
+                    ? colors[index]
+                    : const Color(0xFFF3EFEA),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Text(
+                tabs[index],
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: selected
+                      ? selectedTextColors[index]
+                      : AppColors.textGrey,
+                ),
+              ),
+            ),
+          ),
+        );
+      }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -313,6 +374,8 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 20),
+                      _buildPetTabs(),
                     ],
                   ),
                 ),

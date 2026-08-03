@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../state/app_state.dart';
 import '../l10n/app_strings.dart';
+import '../widgets/language_badge.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -18,20 +19,45 @@ class _ProfileScreenState extends State<ProfileScreen> {
         return SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 24),
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
-                  decoration: const BoxDecoration(
-                    gradient: AppColors.tealHeaderGradient,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(28),
-                      bottomRight: Radius.circular(28),
-                    ),
+                Expanded(
+                  child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        appState.ownerName,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        t('owner_label').replaceFirst(
+                          '{pets}',
+                          appState.petNamesLabel,
+                        ),
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ],
                   ),
-                ), 
+                ),
+                const LanguageBadge(
+                  background: Colors.white24,
+                  textColor: Colors.white,
+                ),
               ],
             ),
           ),

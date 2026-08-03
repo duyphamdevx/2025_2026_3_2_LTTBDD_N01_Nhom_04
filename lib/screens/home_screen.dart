@@ -140,14 +140,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
+                 const SizedBox(height: 20),
+                 Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                   child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _QuickAction(
+                             icon: Icons.pets_rounded,
+                              label: t('quick_pet'),onTap: () => appState.goToTab(1),
+                               ),
+                              ],
+                             ),
+                            ),
+                           
+                          ],
+                        ),
+                      ),
+                    );
+                   },
+                 );
+                }
+               }
 class _QuickAction extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -164,8 +178,8 @@ class _QuickAction extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 60,
-            height:60,
+            width: 52,
+            height:52,
             decoration:BoxDecoration(
              color: AppColors.tealLight,
              borderRadius: BorderRadius.circular(16) 

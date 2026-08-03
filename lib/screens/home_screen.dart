@@ -261,7 +261,15 @@ class _TaskTile extends StatelessWidget {
         size: 26,
       ),
     ),
-  ],
-),
+    const SizedBox(width: 12),
+    Container( width: 36, height: 36, decoration: BoxDecoration(
+    color: AppColors.pinkLight,
+    borderRadius: BorderRadius.circular(10),
+    ),child: Center(
+    child: Text(task.emoji),
+    ),
+    ),
+   ],
+  ),
 );
 }

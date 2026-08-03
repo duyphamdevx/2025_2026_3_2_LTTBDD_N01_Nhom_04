@@ -36,8 +36,6 @@ lib/
     pet_profile_screen.dart    # Hồ sơ thú cưng (nước uống/khẩu phần/dị ứng)
     calendar_screen.dart       # Lịch + thêm việc cần làm + toggle Bác sĩ thú y
     vet_screen.dart            # Tìm phòng khám (tìm kiếm, lọc, đặt lịch, SOS)
-    community_screen.dart      # Bảng tin, tin nhắn, nhóm của tôi
-    chat_screen.dart           # Chi tiết 1 cuộc trò chuyện
     profile_screen.dart        # Cá nhân, đổi ngôn ngữ, về ứng dụng, nhóm thực hiện
 ```
 
@@ -56,7 +54,7 @@ lib/
 - **Thẻ chọn thú cưng ở Trang chủ** đã sửa theo đúng ảnh: bo góc lớn, cao hơn,
   mỗi thú cưng 1 màu pastel riêng, viền cam + đổ bóng khi được chọn.
 - Các tính năng thêm thú cưng, thêm việc cần làm, đặt lịch khám, tìm kiếm/lọc
-  phòng khám, bảng tin, nhóm cộng đồng... vẫn hoạt động như trước, nay đã dịch
+  phòng khám, ... vẫn hoạt động như trước, nay đã dịch
   song ngữ đầy đủ.
 
 ## Giới hạn / gợi ý làm tiếp

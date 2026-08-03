@@ -213,7 +213,6 @@ flutter doctor
 </table>
 
 🗂 Cấu trúc dự án
-
 lib/
 ├── main.dart
 ├── l10n/

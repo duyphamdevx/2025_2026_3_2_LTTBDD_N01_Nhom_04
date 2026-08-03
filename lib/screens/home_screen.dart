@@ -155,6 +155,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   label: t('quick_calendar'),
                                    onTap: () => appState.goToTab(2),
                                    ),
+                                   _QuickAction(
+                                    icon: Icons.medical_services_rounded,
+                                    label: t('quick_vet'),
+                                     onTap: () => appState.goToVetTab(),
+                                     ),
                               ],
                              ),
                             ),

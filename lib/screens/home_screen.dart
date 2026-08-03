@@ -243,8 +243,11 @@ class _TaskTile extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return const SizedBox.shrink();
-  }
+ Widget build(BuildContext context) {
+  return Container(
+    margin: const EdgeInsets.only(bottom: 12),
+    padding: const EdgeInsets.all(14),
+    decoration: AppTheme.cardDecoration(),
+    child: const SizedBox.shrink(),
+  );
 }
-

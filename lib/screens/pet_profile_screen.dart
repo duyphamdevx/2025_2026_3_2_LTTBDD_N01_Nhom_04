@@ -167,11 +167,37 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                           const LanguageBadge(),
                         ],
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 12),
+                      Center(
+                        child: Container(
+                          width: 110,
+                          height: 110,
+                          decoration: const BoxDecoration(
+                            gradient: AppColors.avatarGradient,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Text(
+                              _selectedPet!.emoji,
+                              style: const TextStyle(fontSize: 52),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
                       Center(
                         child: Text(
                           _selectedPet!.name,
                           style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Center(
+                        child: Text(
+                          '${_selectedPet!.species} · ${_selectedPet!.age} ${t('years_old')} · ${_selectedPet!.gender == 'female' ? t('female') : t('male')}',
+                          style: const TextStyle(
+                            color: AppColors.textGrey,
+                          ),
                         ),
                       ),
                     ],

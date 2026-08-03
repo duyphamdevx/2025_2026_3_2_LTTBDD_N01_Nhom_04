@@ -125,6 +125,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         showChevron: true,
                         onTap: _openEditProfileSheet,
                       ),
+                      const SizedBox(height: 20),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          t('settings'),
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ),

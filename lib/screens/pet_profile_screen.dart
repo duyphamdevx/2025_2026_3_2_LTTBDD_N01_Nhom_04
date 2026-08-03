@@ -106,9 +106,7 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                 vertical: 10,
               ),
               decoration: BoxDecoration(
-                color: selected
-                    ? colors[index]
-                    : const Color(0xFFF3EFEA),
+                color: selected ? colors[index] : const Color(0xFFF3EFEA),
                 borderRadius: BorderRadius.circular(14),
               ),
               child: Text(
@@ -453,11 +451,73 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       _buildPetTabs(),
                       const SizedBox(height: 16),
                       _buildTabContent(_selectedPet!),
+                      const SizedBox(height: 24),
+                      Text(
+                        t('other_needs'),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: _NeedCard(
+                              icon: Icons.shower_rounded,
+                              label: t('bathing'),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: _NeedCard(
+                              icon: Icons.vaccines_rounded,
+                              label: t('vaccination'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
         );
       },
+    );
+  }
+}
+
+class _NeedCard extends StatelessWidget {
+  final IconData icon;
+  final String label;
+
+  const _NeedCard({
+    required this.icon,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 18),
+      decoration: AppTheme.cardDecoration(radius: 16),
+      child: Column(
+        children: [
+          Container(
+            width: 48,
+            height: 48,
+            decoration: BoxDecoration(
+              color: AppColors.tealLight,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Icon(
+              icon,
+              color: AppColors.secondaryTeal,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            label,
+            style: const TextStyle(fontSize: 12),
+          ),
+        ],
+      ),
     );
   }
 }

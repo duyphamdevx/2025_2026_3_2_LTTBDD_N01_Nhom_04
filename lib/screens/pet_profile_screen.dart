@@ -4,6 +4,7 @@ import '../l10n/app_strings.dart';
 import '../models/pet.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../widgets/app_bottom_sheet.dart';
 import '../widgets/language_badge.dart';
 
 class PetProfileScreen extends StatefulWidget {
@@ -16,6 +17,58 @@ class PetProfileScreen extends StatefulWidget {
 class _PetProfileScreenState extends State<PetProfileScreen> {
   Pet? _selectedPet;
   int _tabIndex = 2;
+
+  void _openPetForm() {
+    final nameController = TextEditingController();
+    final speciesController = TextEditingController();
+
+    showAppBottomSheet(
+      context: context,
+      title: t('add_pet_title'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            t('pet_name'),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 6),
+          TextField(
+            controller: nameController,
+            decoration: InputDecoration(
+              hintText: t('pet_name_hint'),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            t('species'),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 6),
+          TextField(
+            controller: speciesController,
+            decoration: InputDecoration(
+              hintText: t('species_hint'),
+            ),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(t('add_pet_button')),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   void _confirmDeletePet(Pet pet) {
     showDialog(
@@ -335,7 +388,7 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       child: FloatingActionButton(
                         heroTag: 'add_pet_fab',
                         backgroundColor: AppColors.primaryOrangeDark,
-                        onPressed: () {},
+                        onPressed: _openPetForm,
                         child: const Icon(
                           Icons.add_rounded,
                           color: Colors.white,

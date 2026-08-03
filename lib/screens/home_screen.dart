@@ -282,6 +282,13 @@ class _TaskTile extends StatelessWidget {
         ],
         ),
       ),
+      const SizedBox(height: 2),
+      Text(task.time,
+      style: const TextStyle(
+        fontSize: 12,
+        color: AppColors.textGrey,
+        ),
+      ),
     ],
    ),
  );

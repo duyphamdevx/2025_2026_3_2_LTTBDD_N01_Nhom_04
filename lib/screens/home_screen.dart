@@ -160,6 +160,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     label: t('quick_vet'),
                                      onTap: () => appState.goToVetTab(),
                                      ),
+                                     _QuickAction(
+                                       icon: Icons.badge_rounded,
+                                        label: t('quick_profile'),
+                                        onTap: () => appState.goToTab(4),
+                                        ),
                               ],
                              ),
                             ),

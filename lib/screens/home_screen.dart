@@ -91,6 +91,55 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                
+                const SizedBox(height: 18),
+
+                SizedBox(
+                  height: 108,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    itemCount: pets.length,
+                    separatorBuilder: (_, __) =>
+                        const SizedBox(width: 14),
+                    itemBuilder: (context, index) {
+                      final pet = pets[index];
+                      final selected = index == _selectedPetIndex;
+
+                      final baseColor = AppColors.petPalette[
+                        index % AppColors.petPalette.length
+                      ];
+
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selectedPetIndex = index;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 180),
+                          width: 76,
+                          decoration: BoxDecoration(
+                            color: baseColor,
+                            borderRadius: BorderRadius.circular(24),
+                            border: selected
+                                ? Border.all(
+                                    color: AppColos.primaryOrangeDark,
+                                    width: 3,
+                                  )
+                                : null,
+                          ),
+                          child: Center(
+                            child: Text(
+                              pet.emoji,
+                              style: const TextStyle(fontSize: 36),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),

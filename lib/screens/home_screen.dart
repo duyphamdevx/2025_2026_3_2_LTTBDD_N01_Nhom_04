@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import'../staste/app_state.dart';
+import '../state/app_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,32 +15,36 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: appState,
-      builder:(context, _) {
+      builder: (context, _) {
         final pets = appState.pets;
-        final task = appState.tasks;
-        if(pest.isEmpty) {
+        final tasks = appState.tasks;
+
+        if (pets.isEmpty) {
           return const SafeArea(
             child: Center(
               child: Text('Chưa có thú cưng'),
             ),
           );
         }
-        if (_HomeScreenState >= pets.length) {
+
+        if (_selectedPetIndex >= pets.length) {
           _selectedPetIndex = 0;
         }
+
         final activePet = pets[_selectedPetIndex];
-         return SafeArea(
+
+        return SafeArea(
           child: Center(
-            child:Column(
-              mainAxisAlignment: MainAxisAlignment.cente,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(activePet.name),
                 Text('Số công việc: ${tasks.length}'),
               ],
             ),
           ),
-         );
+        );
       },
-      
     );
   }
+}

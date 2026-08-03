@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/app_strings.dart';
 import '../models/pet.dart';
 import '../state/app_state.dart';
+import '../widgets/language_badge.dart';
 
 class PetProfileScreen extends StatefulWidget {
   const PetProfileScreen({super.key});
@@ -28,9 +29,15 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  t('pet_management_title'),
-                  style: Theme.of(context).textTheme.headlineSmall,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      t('pet_management_title'),
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    const LanguageBadge(),
+                  ],
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -48,4 +55,4 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
       },
     );
   }
-}
+} 

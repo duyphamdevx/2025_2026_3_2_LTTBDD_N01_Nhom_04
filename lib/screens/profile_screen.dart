@@ -14,6 +14,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  bool _notificationsOn = true;
   void _openEditProfileSheet() {
     final nameController = TextEditingController(
       text: appState.ownerName,

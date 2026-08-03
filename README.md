@@ -308,9 +308,9 @@ Viết test tự động
 
 <table>
 <tr>
-<td><b>Phạm Thế Duy</b><br><code>24100583</code><br>Kiến trúc, state, theme, localization, lịch và dịch vụ thú y</td>
-<td><b>Phạm Thảo Hiền Vy</b><br><code>24100439</code><br>Trang chủ và hồ sơ thú cưng</td>
-<td><b>Nguyễn Hoàng Nam</b><br><code>24100136</code><br>Đăng nhập, quên mật khẩu và hồ sơ cá nhân</td>
+<td><b>Phạm Thế Duy</b><br><code>24100583</code><br></td>
+<td><b>Phạm Thảo Hiền Vy</b><br><code>24100439</code><br></td>
+<td><b>Nguyễn Hoàng Nam</b><br><code>24100136</code><br></td>
 </tr>
 </table>
 

@@ -27,6 +27,7 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
     final allergyController = TextEditingController();
 
     String gender = 'female';
+    String? errorText;
 
     showAppBottomSheet(
       context: context,
@@ -151,11 +152,28 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                   hintText: t('allergy_hint'),
                 ),
               ),
+              if (errorText != null) ...[
+                const SizedBox(height: 10),
+                Text(
+                  errorText!,
+                  style: const TextStyle(
+                    color: AppColors.allergyRed,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
+                    if (nameController.text.trim().isEmpty) {
+                      setSheetState(() {
+                        errorText = t('pet_name_required');
+                      });
+                      return;
+                    }
+
                     Navigator.of(context).pop();
                   },
                   child: Text(t('add_pet_button')),

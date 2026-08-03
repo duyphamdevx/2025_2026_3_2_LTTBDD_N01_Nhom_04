@@ -148,3 +148,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+class _QuickAction extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  const _QuickAction({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox.shrink();
+  }
+}

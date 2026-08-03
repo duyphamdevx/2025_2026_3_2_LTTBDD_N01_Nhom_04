@@ -174,6 +174,38 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                       return;
                     }
 
+                    final name = nameController.text.trim();
+
+                    final species = speciesController.text.trim().isEmpty
+                        ? 'Chưa rõ loài'
+                        : speciesController.text.trim();
+
+                    final age = int.tryParse(
+                          ageController.text.trim(),
+                        ) ??
+                        1;
+
+                    appState.addPet(
+                      Pet(
+                        id: '${name.toLowerCase()}_'
+                            '${DateTime.now().microsecondsSinceEpoch}',
+                        name: name,
+                        species: species,
+                        age: age,
+                        gender: gender,
+                        emoji: AppState.emojiForSpecies(species),
+                        waterInfo: waterController.text.trim().isEmpty
+                            ? 'Chưa cập nhật thông tin nước uống.'
+                            : waterController.text.trim(),
+                        foodInfo: foodController.text.trim().isEmpty
+                            ? 'Chưa cập nhật khẩu phần ăn.'
+                            : foodController.text.trim(),
+                        allergyInfo: allergyController.text.trim().isEmpty
+                            ? 'Chưa ghi nhận dị ứng.'
+                            : allergyController.text.trim(),
+                      ),
+                    );
+
                     Navigator.of(context).pop();
                   },
                   child: Text(t('add_pet_button')),

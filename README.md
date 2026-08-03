@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="./docs/images/pawcare-cute-banner.svg" alt="PawCare Cute Banner" width="100%" />
+  <img src="./docs/images/pawcare-boxed-banner.svg" alt="PawCare Banner" width="100%" />
 </p>
 
 <h1 align="center">🐾 PawCare</h1>
 
 <p align="center">
-  <strong>A cute pastel pet-care app built with Flutter.</strong><br>
-  Soft, friendly, and designed to make daily pet care feel easier.
+  <strong>Cute pastel pet-care app built with Flutter.</strong><br>
+  Mềm mại, dễ thương và được sắp xếp gọn gàng để quản lý thú cưng dễ hơn mỗi ngày.
 </p>
 
 <p align="center">
@@ -16,38 +16,62 @@
   <img src="https://img.shields.io/badge/Version-1.0.0-F6B27A?style=flat-square" alt="Version">
 </p>
 
-<p align="center">
-  <a href="#-about">About</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-project-structure">Project Structure</a> •
-  <a href="#-team">Team</a>
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
 
-🌸 About
+🌸 Giới thiệu
 
-PawCare là ứng dụng Flutter hỗ trợ người dùng quản lý thú cưng theo cách nhẹ nhàng, trực quan và thân thiện.
+PawCare là ứng dụng Flutter giúp người dùng quản lý thú cưng theo cách trực quan và nhẹ nhàng.
 
-Thay vì ghi chú rời rạc hoặc phải nhớ nhiều công việc chăm sóc mỗi ngày, PawCare giúp gom mọi thứ vào một nơi: hồ sơ thú cưng, lịch chăm sóc, lịch khám thú y và hỗ trợ SOS.Dự án được xây dựng với định hướng tạo ra một trải nghiệm mềm mại, dễ dùng và phù hợp với những người yêu thú cưng.
+Ứng dụng gom các nhu cầu quan trọng vào một nơi:
 
-Academic project for Mobile Application Development — Class N01, Group 04.
+Hồ sơ thú cưng
 
-✨ Features
+Lịch chăm sóc hằng ngày
+
+Lịch khám thú y
+
+Hỗ trợ SOS khẩn cấp
+
+PawCare được xây dựng để giảm cảm giác rối khi phải ghi nhớ nhiều việc nhỏ mỗi ngày trong quá trình chăm sóc thú cưng.
+
+</td>
+<td width="50%" valign="top">
+
+💡 Thông tin nhanh
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
+<tr><td>📚 <b>Môn học</b></td><td>Lập trình thiết bị di động</td></tr>
+<tr><td>🏫 <b>Lớp</b></td><td>N01</td></tr>
+<tr><td>👥 <b>Nhóm</b></td><td>04</td></tr>
+<tr><td>👨‍🏫 <b>Giảng viên</b></td><td>ThS. Nguyễn Xuân Quế</td></tr>
+<tr><td>🌐 <b>Ngôn ngữ</b></td><td>Tiếng Việt / English</td></tr>
+<tr><td>📱 <b>Nền tảng</b></td><td>Flutter</td></tr>
+</table>
 
-🐶 Pet Profile
+</td>
+</tr>
+</table>
 
-Thêm, sửa và xóa hồ sơ thú cưng
+✨ Tính năng nổi bật
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+🐶 Hồ sơ thú cưng
+
+Thêm, sửa và xóa thú cưng
 
 Theo dõi thức ăn, nước uống và dị ứng
 
 Chọn thú cưng để quản lý chăm sóc
 
-📅 Care Planner
+</td>
+<td width="50%" valign="top">
+
+📅 Lịch chăm sóc
 
 Tạo công việc theo ngày và giờ
 
@@ -55,17 +79,27 @@ Chỉnh sửa hoặc xóa công việc
 
 Gán công việc cho từng thú cưng
 
-🏥 Veterinary Services
+Đánh dấu công việc hoàn thành
 
-Tìm kiếm phòng khám thú y
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-Lọc và xem danh sách phù hợp
+🏥 Dịch vụ thú y
+
+Tìm kiếm phòng khám
+
+Lọc danh sách theo nhu cầu
 
 Đặt, sửa hoặc hủy lịch hẹn
 
-Kích hoạt luồng SOS khẩn cấp
+Luồng SOS khẩn cấp
 
-🔐 Account & Profile
+</td>
+<td width="50%" valign="top">
+
+🔐 Tài khoản & cá nhân
 
 Đăng nhập và đăng ký
 
@@ -73,19 +107,47 @@ Quên mật khẩu
 
 Kiểm tra dữ liệu biểu mẫu
 
+Xem và cập nhật hồ sơ cá nhân
+
+</td>
+</tr>
 </table>
 
-💗 Highlights
+💗 Vì sao PawCare dễ dùng?
 
-Hỗ trợ Tiếng Việt / English
+<table>
+<tr>
+<td width="33%" valign="top" align="center">
 
-Giao diện pastel nhẹ nhàng, đúng chất pet-care app
+Gọn gàng
 
-Kiến trúc đơn giản, phù hợp phạm vi đồ án
+Mọi thông tin quan trọng được gom về một chỗ, giúp giảm rối mắt và dễ theo dõi.
 
-Tập trung vào trải nghiệm chăm sóc thú cưng hằng ngày
+</td>
+<td width="33%" valign="top" align="center">
 
-🧁 Tech Stack
+Thân thiện
+
+Tông màu pastel và bố cục nhẹ nhàng tạo cảm giác gần gũi với người dùng.
+
+</td>
+<td width="33%" valign="top" align="center">
+
+Hữu ích
+
+Tập trung vào các thói quen chăm sóc thật sự cần thiết trong cuộc sống hằng ngày.
+
+</td>
+</tr>
+</table>
+
+🧁 Công nghệ sử dụng
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+Core
 
 Flutter
 
@@ -93,7 +155,10 @@ Dart
 
 Material Design
 
-ChangeNotifier + AnimatedBuilder
+</td>
+<td width="50%" valign="top">
+
+Packages
 
 table_calendar
 
@@ -101,42 +166,53 @@ intl
 
 google_fonts
 
+cupertino_icons
+
+</td>
+</tr>
+</table>
+
 dependencies:
   cupertino_icons: ^1.0.6
   table_calendar: ^3.1.2
   intl: ^0.19.0
   google_fonts: ^6.2.1
 
-🚀 Getting Started
+🚀 Cài đặt và chạy dự án
+
+<table>
+<tr>
+<td width="50%" valign="top">
 
 1. Clone repository
 
 git clone https://github.com/duyphamdevx/2025_2026_3_2_LTTBDD_N01_Nhom_04.git
 cd 2025_2026_3_2_LTTBDD_N01_Nhom_04
 
-2. Create Flutter platform folders
-
-Repository hiện tập trung vào mã nguồn trong lib/, vì vậy hãy tạo các thư mục nền tảng còn thiếu bằng:
+2. Tạo cấu trúc Flutter
 
 flutter create .
 
-3. Install dependencies
+</td>
+<td width="50%" valign="top">
+
+3. Cài dependencies
 
 flutter pub get
 
-4. Run the app
+4. Chạy ứng dụng
 
 flutter run
 
-Chạy trên Chrome:
-
-flutter run -d chrome
-
-Kiểm tra môi trường:
+5. Kiểm tra môi trường
 
 flutter doctor
 
-🗂 Project Structure
+</td>
+</tr>
+</table>
+
+🗂 Cấu trúc dự án
 
 lib/
 ├── main.dart
@@ -166,21 +242,44 @@ lib/
     ├── bottom_nav.dart
     └── language_badge.dart
 
-🌼 Current Scope
+<table>
+<tr>
+<td width="33%" valign="top"><b>models/</b><br>Dữ liệu của thú cưng, công việc, lịch hẹn và phòng khám.</td>
+<td width="33%" valign="top"><b>screens/</b><br>Các màn hình chính của ứng dụng.</td>
+<td width="33%" valign="top"><b>state/</b><br>Quản lý trạng thái dùng chung.</td>
+</tr>
+<tr>
+<td width="33%" valign="top"><b>l10n/</b><br>Chuỗi giao diện tiếng Việt và tiếng Anh.</td>
+<td width="33%" valign="top"><b>theme/</b><br>Màu sắc, font và style dùng chung.</td>
+<td width="33%" valign="top"><b>widgets/</b><br>Các thành phần giao diện tái sử dụng.</td>
+</tr>
+</table>
 
-PawCare hiện là prototype học tập, nên vẫn còn một số giới hạn:
+🌼 Giới hạn hiện tại
+
+<table>
+<tr>
+<td>
 
 Xác thực và quên mật khẩu đang ở mức mô phỏng
 
-Dữ liệu được lưu trong bộ nhớ tạm
+Dữ liệu đang lưu trong bộ nhớ tạm
 
 Danh sách phòng khám là dữ liệu mẫu
 
-SOS chưa gọi điện thực tế
+SOS chưa thực hiện cuộc gọi thật
 
 Chưa tích hợp Maps, GPS, notification hoặc backend
 
-🌱 Roadmap
+</td>
+</tr>
+</table>
+
+🌱 Hướng phát triển
+
+<table>
+<tr>
+<td width="50%" valign="top">
 
 Kết nối Firebase Authentication
 
@@ -190,39 +289,30 @@ Lưu phiên đăng nhập cục bộ
 
 Tích hợp bản đồ và định vị
 
+</td>
+<td width="50%" valign="top">
+
 Thêm nhắc lịch chăm sóc
 
 Hỗ trợ ảnh thật của thú cưng
 
-Bổ sung dark mode và test tự động
+Bổ sung dark mode
 
-👩‍💻 Team
+Viết test tự động
 
-Thành viên
+</td>
+</tr>
+</table>
 
-MSSV
+👩‍💻 Nhóm thực hiện
 
-Phụ trách
-
-Phạm Thế Duy
-
-24100583
-
-Kiến trúc, state, theme, localization, lịch và dịch vụ thú y
-
-Phạm Thảo Hiền Vy
-
-24100439
-
-Trang chủ và hồ sơ thú cưng
-
-Nguyễn Hoàng Nam
-
-24100136
-
-Đăng nhập, quên mật khẩu và hồ sơ cá nhân
-
-Giảng viên hướng dẫn: ThS. Nguyễn Xuân QuếMôn học: Lập trình thiết bị di độngLớp: N01Nhóm: 04
+<table>
+<tr>
+<td><b>Phạm Thế Duy</b><br><code>24100583</code><br>Kiến trúc, state, theme, localization, lịch và dịch vụ thú y</td>
+<td><b>Phạm Thảo Hiền Vy</b><br><code>24100439</code><br>Trang chủ và hồ sơ thú cưng</td>
+<td><b>Nguyễn Hoàng Nam</b><br><code>24100136</code><br>Đăng nhập, quên mật khẩu và hồ sơ cá nhân</td>
+</tr>
+</table>
 
 <p align="center">
   <strong>Made with 💖 for pet lovers</strong><br>

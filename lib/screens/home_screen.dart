@@ -168,7 +168,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                              ),
                             ),
-                           
+                           const SizedBox(height: 24),
+                           Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Text(
+                               t('today'),style: Theme.of(context).textTheme.titleMedium,
+                               ),
+                              ),
                           ],
                         ),
                       ),

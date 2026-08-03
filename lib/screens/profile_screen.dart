@@ -56,6 +56,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  void _showAboutSheet() {
+    showAppBottomSheet(
+      context: context,
+      title: t('about_app'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'PawCare',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            t('about_app_desc'),
+            style: const TextStyle(
+              color: AppColors.textGrey,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            t('version_label'),
+            style: const TextStyle(
+              color: AppColors.textGrey,
+              fontSize: 12,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -165,6 +198,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             _notificationsOn = !_notificationsOn;
                           });
                         },
+                      ),
+                      const SizedBox(height: 12),
+                      _MenuTile(
+                        icon: Icons.info_rounded,
+                        iconColor: Colors.blue,
+                        iconBg: Colors.blue.shade50,
+                        label: t('about_app'),
+                        showChevron: true,
+                        onTap: _showAboutSheet,
                       ),
                     ],
                   ),

@@ -61,7 +61,65 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                     ),
                   )
                 else
-                  Text('Có ${pets.length} thú cưng'),
+                  ...pets.asMap().entries.map((entry) {
+                    final index = entry.key;
+                    final pet = entry.value;
+                    final baseColor = AppColors
+                        .petPalette[index % AppColors.petPalette.length];
+                    final genderLabel =
+                        pet.gender == 'female' ? t('female') : t('male');
+
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      padding: const EdgeInsets.all(14),
+                      decoration: AppTheme.cardDecoration(),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 54,
+                            height: 54,
+                            decoration: BoxDecoration(
+                              color: baseColor,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: Center(
+                              child: Text(
+                                pet.emoji,
+                                style: const TextStyle(fontSize: 28),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  pet.name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  '${pet.species} · ${pet.age} ${t('years_old')} · $genderLabel',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textGrey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Icon(
+                            Icons.chevron_right_rounded,
+                            color: AppColors.textGrey,
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
               ],
             ),
           ),

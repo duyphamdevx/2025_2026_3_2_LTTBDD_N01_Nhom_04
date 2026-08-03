@@ -53,6 +53,7 @@ lib/
     app_bottom_sheet.dart           # Bottom sheet dùng chung cho các form
     language_badge.dart             # Badge + bảng chọn ngôn ngữ VI/EN
   screens/
+<<<<<<< HEAD
     team_info_screen.dart           # Giới thiệu nhóm thực hiện (mở đầu app)
     login_screen.dart               # Đăng nhập
     register_screen.dart            # Đăng ký tài khoản
@@ -63,11 +64,39 @@ lib/
     services_screen.dart            # Dịch vụ thú y (tìm phòng khám/đặt-sửa-hủy
                                      #   lịch khám/SOS khẩn cấp)
     profile_screen.dart             # Cá nhân, đổi ngôn ngữ, về ứng dụng, nhóm
+=======
+    team_info_screen.dart      # Giới thiệu nhóm thực hiện (mở đầu app)
+    login_screen.dart          # Đăng nhập
+    register_screen.dart       # Đăng ký tài khoản
+    home_screen.dart           # Trang chủ - thẻ chọn thú cưng, thêm thú cưng
+    pet_profile_screen.dart    # Hồ sơ thú cưng (nước uống/khẩu phần/dị ứng)
+    calendar_screen.dart       # Lịch + thêm việc cần làm + toggle Bác sĩ thú y
+    vet_screen.dart            # Tìm phòng khám (tìm kiếm, lọc, đặt lịch, SOS)
+    profile_screen.dart        # Cá nhân, đổi ngôn ngữ, về ứng dụng, nhóm thực hiện
+>>>>>>> 0b5a0d5e9d17a05e3357098505ec9713d988cf75
 ```
 
 ---
 
+<<<<<<< HEAD
 ## 3. Tính năng theo màn hình
+=======
+- **Trang giới thiệu nhóm** hiện đầu tiên khi mở app (giảng viên hướng dẫn, 3
+  thành viên, vai trò, link GitHub), bấm "Bắt đầu" để vào Đăng nhập. Xem lại
+  bất kỳ lúc nào qua Cá nhân > "Nhóm thực hiện". **Sửa tên/MSSV/vai trò thật
+  của nhóm bạn** trực tiếp trong `lib/screens/team_info_screen.dart` (đầu file,
+  hằng số `_members` và `_instructor`).
+- **Đăng ký tài khoản** (họ tên, email, mật khẩu, xác nhận mật khẩu), liên kết
+  hai chiều với màn Đăng nhập.
+- **Song ngữ Việt/Anh đầy đủ**: bấm vào badge "VI"/"EN" ở góc trên bất kỳ màn
+  hình nào, hoặc vào Cá nhân > "Ngôn ngữ" để đổi - toàn bộ giao diện (nhãn tab,
+  nút bấm, tiêu đề, form...) cập nhật ngay lập tức, không cần khởi động lại.
+- **Thẻ chọn thú cưng ở Trang chủ** đã sửa theo đúng ảnh: bo góc lớn, cao hơn,
+  mỗi thú cưng 1 màu pastel riêng, viền cam + đổ bóng khi được chọn.
+- Các tính năng thêm thú cưng, thêm việc cần làm, đặt lịch khám, tìm kiếm/lọc
+  phòng khám, ... vẫn hoạt động như trước, nay đã dịch
+  song ngữ đầy đủ.
+>>>>>>> 0b5a0d5e9d17a05e3357098505ec9713d988cf75
 
 ### Đăng nhập / Đăng ký / Quên mật khẩu
 - **Đăng nhập**: nhập email + mật khẩu, có nút "Quên mật khẩu?".

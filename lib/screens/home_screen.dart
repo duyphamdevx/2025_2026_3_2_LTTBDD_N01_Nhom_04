@@ -176,6 +176,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                t('today'),style: Theme.of(context).textTheme.titleMedium,
                                ),
                               ),
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 20),
+                                 child: Column(
+                                   children: tasks.map((task) {
+                                     return _TaskTile(
+                                       task: task,
+                                        onToggle: () {},
+                                        );}).toList(),
+                                      ),
+                                    ),
                           ],
                         ),
                       ),
@@ -184,110 +195,111 @@ class _HomeScreenState extends State<HomeScreen> {
                  );
                 }
                }
-class _QuickAction extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-  const _QuickAction({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        children: [
-          Container(
-            width: 52,
-            height:52,
-            decoration:BoxDecoration(
-             color: AppColors.tealLight,
-             borderRadius: BorderRadius.circular(16) 
-            ),
-            child: Icon(
-              icon,
-              color:AppColors.secondaryTeal,
-            ),
-          ),
-          const SizedBox(height: 6),
-          Text(
-          label,
-          style: const TextStyle(
-          fontSize: 11,
-          color: AppColors.textDark,
-          ),
-        ),
-         const SizedBox(height: 6),
+                class _QuickAction extends StatelessWidget {
+                  final IconData icon;
+                  final String label;
+                  final VoidCallback onTap;
+                  const _QuickAction({
+                    required this.icon,
+                    required this.label,
+                    required this.onTap,
+                  });
+                  @override
+                  Widget build(BuildContext context) {
+                    return GestureDetector(
+                      onTap: onTap,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 52,
+                            height:52,
+                            decoration:BoxDecoration(
+                            color: AppColors.tealLight,
+                            borderRadius: BorderRadius.circular(16) 
+                            ),
+                            child: Icon(
+                              icon,
+                              color:AppColors.secondaryTeal,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                          label,
+                          style: const TextStyle(
+                          fontSize: 11,
+                          color: AppColors.textDark,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
 
-           Text(
-            label,
-            style: const TextStyle(
-            fontSize: 11,
-             color: AppColors.textDark,
-        ),
-       ),
-      ],    
-    ),
-  );
- }
-}
-class _TaskTile extends StatelessWidget {
-  final PetTask task;
-  final VoidCallback onToggle;
+                          Text(
+                            label,
+                            style: const TextStyle(
+                            fontSize: 11,
+                            color: AppColors.textDark,
+                        ),
+                      ),
+                      ],    
+                    ),
+                  );
+                }
+                }
+                class _TaskTile extends StatelessWidget {
+                  final PetTask task;
+                  final VoidCallback onToggle;
 
-  const _TaskTile({
-    required this.task,
-    required this.onToggle,
-  });
+                  const _TaskTile({
+                    required this.task,
+                    required this.onToggle,
+                  });
 
-  @override
- Widget build(BuildContext context) {
-  return Container(
-    margin: const EdgeInsets.only(bottom: 12),
-    padding: const EdgeInsets.all(14),
-    decoration: AppTheme.cardDecoration(),
-    child: Row(
-      children: [GestureDetector(
-      onTap: onToggle,
-      child: Icon(
-        task.isDone
-            ? Icons.check_circle_rounded
-            : Icons.radio_button_unchecked_rounded,
-        color: task.isDone
-            ? AppColors.success
-            : AppColors.textGrey,
-        size: 26,
-      ),
-    ),
-    const SizedBox(width: 12),
-    Container( width: 36, height: 36, decoration: BoxDecoration(
-    color: AppColors.pinkLight,
-    borderRadius: BorderRadius.circular(10),
-    ),
-    child: Center(
-    child: Text(task.emoji),
-    ),
-    ),
-    const SizedBox(width: 12),
-    Expanded(
-       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
-        Text(task.title,style: TextStyle(
-            fontWeight: FontWeight.w600, decoration: task.isDone ? TextDecoration.lineThrough: null,
-             color: task.isDone ? AppColors.textGrey: AppColors.textDark,
-             ),
-            ),
-          ],
-        ),
-      ),
-      const SizedBox(height: 2),
-     Text(task.isDone ? '${task.time} · ${t('done_at')}' : task.time,style: const TextStyle( fontSize: 12,
-     color:AppColors.textGrey,
-      ),
-     ),
-    ],
-   ),
- );
-}
+                  @override
+                Widget build(BuildContext context) {
+                  return Container(
+                    margin: const EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.all(14),
+                    decoration: AppTheme.cardDecoration(),
+                    child: Row(
+                      children: [GestureDetector(
+                      onTap: onToggle,
+                      child: Icon(
+                        task.isDone
+                            ? Icons.check_circle_rounded
+                            : Icons.radio_button_unchecked_rounded,
+                        color: task.isDone
+                            ? AppColors.success
+                            : AppColors.textGrey,
+                        size: 26,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Container( width: 36, height: 36, decoration: BoxDecoration(
+                    color: AppColors.pinkLight,
+                    borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                    child: Text(task.emoji),
+                    ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(task.title,style: TextStyle(
+                            fontWeight: FontWeight.w600, decoration: task.isDone ? TextDecoration.lineThrough: null,
+                            color: task.isDone ? AppColors.textGrey: AppColors.textDark,
+                            ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                    Text(task.isDone ? '${task.time} · ${t('done_at')}' : task.time,style: const TextStyle( fontSize: 12,
+                    color:AppColors.textGrey,
+                      ),
+                    ),
+                    ],
+                  ),
+                );
+                }
+                

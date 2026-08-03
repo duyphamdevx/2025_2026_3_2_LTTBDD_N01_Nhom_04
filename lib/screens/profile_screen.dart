@@ -5,6 +5,7 @@ import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_bottom_sheet.dart';
 import '../widgets/language_badge.dart';
+import 'team_info_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -207,6 +208,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         label: t('about_app'),
                         showChevron: true,
                         onTap: _showAboutSheet,
+                      ),
+                      const SizedBox(height: 12),
+                      _MenuTile(
+                        icon: Icons.groups_rounded,
+                        iconColor: Colors.purple,
+                        iconBg: Colors.purple.shade50,
+                        label: t('team_info'),
+                        showChevron: true,
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const TeamInfoScreen(
+                                showStartButton: false,
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

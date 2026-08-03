@@ -270,7 +270,19 @@ class _TaskTile extends StatelessWidget {
     child: Text(task.emoji),
     ),
     ),
-   ],
-  ),
-);
+    const SizedBox(width: 12),
+    Expanded(
+       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+       children: [
+        Text( task.title,style: const TextStyle(
+          fontWeight: FontWeight.w600,
+          color: AppColors.textDark,
+           ),
+          ),
+        ],
+        ),
+      ),
+    ],
+   ),
+ );
 }

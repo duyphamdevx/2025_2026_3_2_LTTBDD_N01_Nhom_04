@@ -134,14 +134,51 @@ class _PetProfileScreenState extends State<PetProfileScreen> {
                     ],
                   ),
                 )
-              : Center(
-                  child: Text(
-                    _selectedPet!.name,
-                    style: Theme.of(context).textTheme.headlineSmall,
+              : SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _selectedPet = null;
+                              });
+                            },
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  Icons.arrow_back_rounded,
+                                  color: AppColors.textDark,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  t('back_to_list'),
+                                  style: const TextStyle(
+                                    color: AppColors.textDark,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const LanguageBadge(),
+                        ],
+                      ),
+                      const SizedBox(height: 24),
+                      Center(
+                        child: Text(
+                          _selectedPet!.name,
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
         );
       },
     );
   }
-} 
+}

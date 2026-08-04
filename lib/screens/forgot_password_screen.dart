@@ -46,4 +46,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         content: Text(
           t('reset_email_sent_desc').replaceFirst('{email}', email),
         ),
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // đóng dialog
+              Navigator.of(context).pop(); // quay lại màn hình đăng nhập
+            },
+            child: Text(t('back_to_login')),
+          ),
+        ],
+      ),
+    );
+  }
 

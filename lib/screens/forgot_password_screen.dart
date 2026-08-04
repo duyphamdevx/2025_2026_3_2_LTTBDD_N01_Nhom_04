@@ -31,3 +31,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     }
     setState(() => _errorText = null);
 
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            const Icon(Icons.mark_email_read_rounded, color: AppColors.success),
+            const SizedBox(width: 10),
+            Expanded(child: Text(t('reset_email_sent_title'))),
+          ],
+        ),
+        content: Text(
+          t('reset_email_sent_desc').replaceFirst('{email}', email),
+        ),
+

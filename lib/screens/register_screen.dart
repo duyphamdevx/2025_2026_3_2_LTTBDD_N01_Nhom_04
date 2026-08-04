@@ -57,4 +57,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            const Icon(Icons.check_circle_rounded, color: AppColors.success),
+            const SizedBox(width: 10),
+            Expanded(child: Text(t('register_success_title'))),
+          ],
+        ),
 

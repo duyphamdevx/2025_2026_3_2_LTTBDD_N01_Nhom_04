@@ -48,3 +48,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
     setState(() => _errorText = null);
 
+
+    appState.updateOwnerName(_nameController.text.trim());
+

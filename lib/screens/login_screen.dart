@@ -142,3 +142,25 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text(t('login_button')),
                           ),
                         ),
+                        const SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(t('no_account'),
+                                style: const TextStyle(color: AppColors.textGrey)),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                                );
+                              },
+                              child: Text(
+                                t('register_button'),
+                                style: const TextStyle(
+                                  color: AppColors.primaryOrangeDark,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),

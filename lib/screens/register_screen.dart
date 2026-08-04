@@ -46,3 +46,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
       setState(() => _errorText = t('password_mismatch'));
       return;
     }
+    setState(() => _errorText = null);
+

@@ -38,3 +38,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       setState(() => _errorText = t('email_invalid'));
       return;
     }
+    if (_passwordController.text.length < 6) {
+      setState(() => _errorText = t('password_too_short'));
+      return;
+    }

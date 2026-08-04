@@ -34,3 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       setState(() => _errorText = t('email_required'));
       return;
     }
+    if (!_isValidEmail(_emailController.text.trim())) {
+      setState(() => _errorText = t('email_invalid'));
+      return;
+    }

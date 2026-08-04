@@ -110,4 +110,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ],
                   ),
                 ),
+                Expanded(
+                  child: Center(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(horizontal: 28),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              gradient: AppColors.headerGradient,
+                              borderRadius: BorderRadius.circular(22),
+                            ),
+                            child: const Icon(Icons.pets_rounded, color: Colors.white, size: 40),
+                          ),
+                          const SizedBox(height: 18),
 

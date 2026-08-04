@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
+import '../theme/app_theme.dart';
+import '../state/app_state.dart';
+import '../l10n/app_strings.dart';
+import '../widgets/language_badge.dart';
 
+/// Màn hình "Quên mật khẩu":
+/// Nhập email -> Gửi email khôi phục -> Thông báo thành công -> Quay lại
+/// màn hình đăng nhập.
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
-  State<ForgotPasswordScreen> createState() =>
-      _ForgotPasswordScreenState();
-}
-
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Text('Quên mật khẩu'),
-        ),
-      ),
-    );
-  }
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }

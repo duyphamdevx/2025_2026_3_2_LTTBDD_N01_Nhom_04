@@ -169,4 +169,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
+                          const SizedBox(height: 16),
+                          _FieldLabel(t('confirm_password')),
+                          TextField(
+                            controller: _confirmController,
+                            obscureText: _obscureConfirm,
+                            decoration: InputDecoration(
+                              hintText: '••••••••',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _obscureConfirm
+                                      ? Icons.visibility_off_rounded
+                                      : Icons.visibility_rounded,
+                                  color: AppColors.textGrey,
+                                ),
+                                onPressed: () =>
+                                    setState(() => _obscureConfirm = !_obscureConfirm),
+                              ),
+                            ),
+                          ),
 

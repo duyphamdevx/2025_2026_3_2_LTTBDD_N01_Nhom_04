@@ -23,3 +23,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isValidEmail(String value) {
     return RegExp(r'^[\w\.\-]+@[\w\-]+\.[\w\-\.]+$').hasMatch(value);
   }
+
+  void _register() {
+    // Kiểm tra hợp lệ thông tin đã nhập.
+    if (_nameController.text.trim().isEmpty) {
+      setState(() => _errorText = t('name_required'));
+      return;
+    }

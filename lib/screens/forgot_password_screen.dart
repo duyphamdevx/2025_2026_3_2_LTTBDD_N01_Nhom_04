@@ -114,4 +114,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             textAlign: TextAlign.center,
                             style: const TextStyle(color: AppColors.textGrey),
                           ),
+                          const SizedBox(height: 28),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(t('email'),
+                                style: Theme.of(context).textTheme.titleMedium),
+                          ),
 

@@ -120,4 +120,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             child: Text(t('email'),
                                 style: Theme.of(context).textTheme.titleMedium),
                           ),
+                          const SizedBox(height: 8),
+                          TextField(
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            decoration:
+                                const InputDecoration(hintText: 'ban@email.com'),
+                          ),
 

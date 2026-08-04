@@ -127,4 +127,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             child: const Icon(Icons.pets_rounded, color: Colors.white, size: 40),
                           ),
                           const SizedBox(height: 18),
+                          Text(
+                            t('register_title'),
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            t('register_subtitle'),
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(color: AppColors.textGrey),
+                          ),
 

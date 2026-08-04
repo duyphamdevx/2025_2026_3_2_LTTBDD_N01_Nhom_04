@@ -68,3 +68,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return AnimatedBuilder(
       animation: appState,
       builder: (context, _) {
+           return Scaffold(
+          backgroundColor: AppColors.background,
+          body: SafeArea(
+            child: Column(

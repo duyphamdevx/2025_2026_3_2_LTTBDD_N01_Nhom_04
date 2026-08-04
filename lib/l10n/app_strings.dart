@@ -252,8 +252,8 @@ const Map<String, Map<String, String>> _strings = {
 
   // Trang giới thiệu nhóm
   'team_header': {
-    'vi': 'Bài tập lớn · Lập trình cho thiết bị di động · Nhóm II',
-    'en': 'Capstone Project · Mobile App Development · Group II',
+    'vi': 'Bài tập lớn · Lập trình cho thiết bị di động · Nhóm IV',
+    'en': 'Capstone Project · Mobile App Development · Group IV',
   },
   'team_info_title': {'vi': 'Thông tin nhóm', 'en': 'Team information'},
   'instructor': {'vi': 'Giảng viên hướng dẫn', 'en': 'Instructor'},

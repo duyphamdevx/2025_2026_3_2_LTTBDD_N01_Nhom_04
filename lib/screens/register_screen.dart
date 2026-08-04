@@ -239,4 +239,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
+class _FieldLabel extends StatelessWidget {
+  final String label;
+  const _FieldLabel(this.label);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(label, style: Theme.of(context).textTheme.titleMedium),
+      ),
+    );
+  }
+}
+
 

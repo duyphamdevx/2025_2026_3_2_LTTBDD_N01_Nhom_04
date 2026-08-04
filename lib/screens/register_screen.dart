@@ -51,3 +51,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     appState.updateOwnerName(_nameController.text.trim());
 
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+

@@ -90,3 +90,27 @@ class _LoginScreenState extends State<LoginScreen> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(hintText: 'ban@email.com'),
                         ),
+                        const SizedBox(height: 18),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(t('password'),
+                              style: Theme.of(context).textTheme.titleMedium),
+                        ),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: _passwordController,
+                          obscureText: _obscurePassword,
+                          decoration: InputDecoration(
+                            hintText: '••••••••',
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility_off_rounded
+                                    : Icons.visibility_rounded,
+                                color: AppColors.textGrey,
+                              ),
+                              onPressed: () => setState(
+                                  () => _obscurePassword = !_obscurePassword),
+                            ),
+                          ),
+                        ),

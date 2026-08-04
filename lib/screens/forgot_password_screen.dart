@@ -72,3 +72,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           backgroundColor: AppColors.background,
           body: SafeArea(
             child: Column(
+               children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(4, 8, 20, 0),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        icon: const Icon(Icons.arrow_back_rounded),
+                      ),
+                      const Spacer(),
+                      const LanguageBadge(),
+                    ],
+                  ),
+                ),

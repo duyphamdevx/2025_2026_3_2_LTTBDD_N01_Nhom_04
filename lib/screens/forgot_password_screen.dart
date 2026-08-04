@@ -127,4 +127,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             decoration:
                                 const InputDecoration(hintText: 'ban@email.com'),
                           ),
+                          if (_errorText != null) ...[
+                            const SizedBox(height: 10),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                _errorText!,
+                                style: const TextStyle(
+                                    color: AppColors.allergyRed, fontSize: 12),
+                              ),
+                            ),
+                          ],
 

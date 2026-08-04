@@ -1,205 +1,323 @@
-# 🐾 PawCare - Ứng dụng chăm sóc thú cưng (Flutter)
+<p align="center">
+  <img src="" alt="PawCare Banner" width="100%" />
+</p>
 
-Ứng dụng quản lý chăm sóc thú cưng: đăng nhập/đăng ký/quên mật khẩu, quản lý
-thú cưng, lịch chăm sóc & nhắc việc, đặt lịch khám thú y & SOS khẩn cấp, hồ sơ
-cá nhân, hỗ trợ song ngữ Việt/Anh, đổi ngôn ngữ ngay trong app.
+<h1 align="center">🐾 PawCare</h1>
 
-**Môn học:** Lập trình thiết bị di động
-**Nhóm:** 04 - Lớp N01
-**Repo:** https://github.com/duyphamdevx/2025_2026_3_2_LTTBDD_N01_Nhom_04
+<p align="center">
+  <strong>Cute pastel pet-care app built with Flutter.</strong><br>
+  Mềm mại, dễ thương và được sắp xếp gọn gàng để quản lý thú cưng dễ hơn mỗi ngày.
+</p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.x-FF9FBC?style=flat-square&logo=flutter&logoColor=white" alt="Flutter">
+  <img src="https://img.shields.io/badge/Dart-%3E%3D3.0-B59BFF?style=flat-square&logo=dart&logoColor=white" alt="Dart">
+  <img src="https://img.shields.io/badge/VI%20%7C%20EN-Bilingual-9AD8C1?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/badge/Version-1.0.0-F6B27A?style=flat-square" alt="Version">
+</p>
 
-## 1. Cách chạy dự án
+<table>
+<tr>
+<td width="50%" valign="top">
 
-1. Cài Flutter SDK: https://docs.flutter.dev/get-started/install (kiểm tra
-   bằng lệnh `flutter doctor`).
-2. Clone repo về máy:
-   ```bash
-   git clone https://github.com/duyphamdevx/2025_2026_3_2_LTTBDD_N01_Nhom_04.git
-   cd 2025_2026_3_2_LTTBDD_N01_Nhom_04
-   ```
-3. Cài dependency:
-   ```bash
-   flutter pub get
-   ```
-4. Chạy ứng dụng (kết nối điện thoại/máy ảo, hoặc chạy trên Chrome):
-   ```bash
-   flutter run
-   ```
+🌸 Giới thiệu
 
----
+PawCare là ứng dụng Flutter giúp người dùng quản lý thú cưng theo cách trực quan và nhẹ nhàng.
 
-## 2. Cấu trúc thư mục
+Ứng dụng gom các nhu cầu quan trọng vào một nơi:
 
-```
+Hồ sơ thú cưng
+
+Lịch chăm sóc hằng ngày
+
+Lịch khám thú y
+
+Hỗ trợ SOS khẩn cấp
+
+PawCare được xây dựng để giảm cảm giác rối khi phải ghi nhớ nhiều việc nhỏ mỗi ngày trong quá trình chăm sóc thú cưng.
+
+</td>
+<td width="50%" valign="top">
+
+💡 Thông tin nhanh
+
+<table>
+<tr><td>📚 <b>Môn học</b></td><td>Lập trình thiết bị di động</td></tr>
+<tr><td>🏫 <b>Lớp</b></td><td>N01</td></tr>
+<tr><td>👥 <b>Nhóm</b></td><td>04</td></tr>
+<tr><td>👨‍🏫 <b>Giảng viên</b></td><td>ThS. Nguyễn Xuân Quế</td></tr>
+<tr><td>🌐 <b>Ngôn ngữ</b></td><td>Tiếng Việt / English</td></tr>
+<tr><td>📱 <b>Nền tảng</b></td><td>Flutter</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+✨ Tính năng nổi bật
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+🐶 Hồ sơ thú cưng
+
+Thêm, sửa và xóa thú cưng
+
+Theo dõi thức ăn, nước uống và dị ứng
+
+Chọn thú cưng để quản lý chăm sóc
+
+</td>
+<td width="50%" valign="top">
+
+📅 Lịch chăm sóc
+
+Tạo công việc theo ngày và giờ
+
+Chỉnh sửa hoặc xóa công việc
+
+Gán công việc cho từng thú cưng
+
+Đánh dấu công việc hoàn thành
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+🏥 Dịch vụ thú y
+
+Tìm kiếm phòng khám
+
+Lọc danh sách theo nhu cầu
+
+Đặt, sửa hoặc hủy lịch hẹn
+
+Luồng SOS khẩn cấp
+
+</td>
+<td width="50%" valign="top">
+
+🔐 Tài khoản & cá nhân
+
+Đăng nhập và đăng ký
+
+Quên mật khẩu
+
+Kiểm tra dữ liệu biểu mẫu
+
+Xem và cập nhật hồ sơ cá nhân
+
+</td>
+</tr>
+</table>
+
+💗 Vì sao PawCare dễ dùng?
+
+<table>
+<tr>
+<td width="33%" valign="top" align="center">
+
+Gọn gàng
+
+Mọi thông tin quan trọng được gom về một chỗ, giúp giảm rối mắt và dễ theo dõi.
+
+</td>
+<td width="33%" valign="top" align="center">
+
+Thân thiện
+
+Tông màu pastel và bố cục nhẹ nhàng tạo cảm giác gần gũi với người dùng.
+
+</td>
+<td width="33%" valign="top" align="center">
+
+Hữu ích
+
+Tập trung vào các thói quen chăm sóc thật sự cần thiết trong cuộc sống hằng ngày.
+
+</td>
+</tr>
+</table>
+
+🧁 Công nghệ sử dụng
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+Core
+
+Flutter
+
+Dart
+
+Material Design
+
+</td>
+<td width="50%" valign="top">
+
+Packages
+
+table_calendar
+
+intl
+
+google_fonts
+
+cupertino_icons
+
+</td>
+</tr>
+</table>
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  table_calendar: ^3.1.2
+  intl: ^0.19.0
+  google_fonts: ^6.2.1
+
+🚀 Cài đặt và chạy dự án
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+1. Clone repository
+
+git clone https://github.com/duyphamdevx/2025_2026_3_2_LTTBDD_N01_Nhom_04.git
+cd 2025_2026_3_2_LTTBDD_N01_Nhom_04
+
+2. Tạo cấu trúc Flutter
+
+flutter create .
+
+</td>
+<td width="50%" valign="top">
+
+3. Cài dependencies
+
+flutter pub get
+
+4. Chạy ứng dụng
+
+flutter run
+
+5. Kiểm tra môi trường
+
+flutter doctor
+
+</td>
+</tr>
+</table>
+
+🗂 Cấu trúc dự án
+
+
+<pre>
 lib/
-  main.dart                        # Điểm khởi chạy app, mở TeamInfoScreen đầu tiên
-  theme/
-    app_theme.dart                 # Bảng màu, font (Baloo 2), style dùng chung
-  state/
-    app_state.dart                 # State dùng chung toàn app (ChangeNotifier):
-                                    #   danh sách thú cưng, việc cần làm, lịch khám,
-                                    #   ngôn ngữ, tab hiện tại...
-  l10n/
-    app_strings.dart                # Từ điển song ngữ Việt/Anh + hàm t('key')
-  models/
-    pet.dart                        # Model Thú cưng (mutable, hỗ trợ sửa)
-    task.dart                       # Model Việc cần làm (mutable, có id)
-    appointment.dart                # Model Lịch khám thú y
-    clinic.dart                     # Model Phòng khám thú y (dữ liệu mẫu)
-  widgets/
-    bottom_nav.dart                 # Thanh điều hướng dưới cùng (5 tab)
-    app_bottom_sheet.dart           # Bottom sheet dùng chung cho các form
-    language_badge.dart             # Badge + bảng chọn ngôn ngữ VI/EN
-  screens/
-<<<<<<< HEAD
-    team_info_screen.dart           # Giới thiệu nhóm thực hiện (mở đầu app)
-    login_screen.dart               # Đăng nhập
-    register_screen.dart            # Đăng ký tài khoản
-    forgot_password_screen.dart     # Quên mật khẩu (gửi email khôi phục)
-    home_screen.dart                # Trang chủ - chọn thú cưng, việc hôm nay
-    pet_profile_screen.dart         # Quản lý thú cưng (xem/thêm/sửa/xóa)
-    calendar_screen.dart            # Lịch chăm sóc (xem/thêm/sửa/xóa/hoàn thành)
-    services_screen.dart            # Dịch vụ thú y (tìm phòng khám/đặt-sửa-hủy
-                                     #   lịch khám/SOS khẩn cấp)
-    profile_screen.dart             # Cá nhân, đổi ngôn ngữ, về ứng dụng, nhóm
-=======
-    team_info_screen.dart      # Giới thiệu nhóm thực hiện (mở đầu app)
-    login_screen.dart          # Đăng nhập
-    register_screen.dart       # Đăng ký tài khoản
-    home_screen.dart           # Trang chủ - thẻ chọn thú cưng, thêm thú cưng
-    pet_profile_screen.dart    # Hồ sơ thú cưng (nước uống/khẩu phần/dị ứng)
-    calendar_screen.dart       # Lịch + thêm việc cần làm + toggle Bác sĩ thú y
-    vet_screen.dart            # Tìm phòng khám (tìm kiếm, lọc, đặt lịch, SOS)
-    profile_screen.dart        # Cá nhân, đổi ngôn ngữ, về ứng dụng, nhóm thực hiện
->>>>>>> 0b5a0d5e9d17a05e3357098505ec9713d988cf75
-```
+├── main.dart
+├── l10n/
+│   └── app_strings.dart
+├── models/
+│   ├── appointment.dart
+│   ├── clinic.dart
+│   ├── pet.dart
+│   └── task.dart
+├── screens/
+│   ├── calendar_screen.dart
+│   ├── forgot_password_screen.dart
+│   ├── home_screen.dart
+│   ├── login_screen.dart
+│   ├── pet_profile_screen.dart
+│   ├── profile_screen.dart
+│   ├── register_screen.dart
+│   ├── services_screen.dart
+│   └── team_info_screen.dart
+├── state/
+│   └── app_state.dart
+├── theme/
+│   └── app_theme.dart
+└── widgets/
+    ├── app_bottom_sheet.dart
+    ├── bottom_nav.dart
+    └── language_badge.dart
+</pre>
 
----
+<table>
+<tr>
+<td width="33%" valign="top"><b>models/</b><br>Dữ liệu của thú cưng, công việc, lịch hẹn và phòng khám.</td>
+<td width="33%" valign="top"><b>screens/</b><br>Các màn hình chính của ứng dụng.</td>
+<td width="33%" valign="top"><b>state/</b><br>Quản lý trạng thái dùng chung.</td>
+</tr>
+<tr>
+<td width="33%" valign="top"><b>l10n/</b><br>Chuỗi giao diện tiếng Việt và tiếng Anh.</td>
+<td width="33%" valign="top"><b>theme/</b><br>Màu sắc, font và style dùng chung.</td>
+<td width="33%" valign="top"><b>widgets/</b><br>Các thành phần giao diện tái sử dụng.</td>
+</tr>
+</table>
 
-<<<<<<< HEAD
-## 3. Tính năng theo màn hình
-=======
-- **Trang giới thiệu nhóm** hiện đầu tiên khi mở app (giảng viên hướng dẫn, 3
-  thành viên, vai trò, link GitHub), bấm "Bắt đầu" để vào Đăng nhập. Xem lại
-  bất kỳ lúc nào qua Cá nhân > "Nhóm thực hiện". **Sửa tên/MSSV/vai trò thật
-  của nhóm bạn** trực tiếp trong `lib/screens/team_info_screen.dart` (đầu file,
-  hằng số `_members` và `_instructor`).
-- **Đăng ký tài khoản** (họ tên, email, mật khẩu, xác nhận mật khẩu), liên kết
-  hai chiều với màn Đăng nhập.
-- **Song ngữ Việt/Anh đầy đủ**: bấm vào badge "VI"/"EN" ở góc trên bất kỳ màn
-  hình nào, hoặc vào Cá nhân > "Ngôn ngữ" để đổi - toàn bộ giao diện (nhãn tab,
-  nút bấm, tiêu đề, form...) cập nhật ngay lập tức, không cần khởi động lại.
-- **Thẻ chọn thú cưng ở Trang chủ** đã sửa theo đúng ảnh: bo góc lớn, cao hơn,
-  mỗi thú cưng 1 màu pastel riêng, viền cam + đổ bóng khi được chọn.
-- Các tính năng thêm thú cưng, thêm việc cần làm, đặt lịch khám, tìm kiếm/lọc
-  phòng khám, ... vẫn hoạt động như trước, nay đã dịch
-  song ngữ đầy đủ.
->>>>>>> 0b5a0d5e9d17a05e3357098505ec9713d988cf75
+🌼 Giới hạn hiện tại
 
-### Đăng nhập / Đăng ký / Quên mật khẩu
-- **Đăng nhập**: nhập email + mật khẩu, có nút "Quên mật khẩu?".
-- **Quên mật khẩu**: nhập email → kiểm tra hợp lệ → gửi email khôi phục (demo)
-  → thông báo thành công → quay lại màn hình đăng nhập.
-- **Đăng ký**: nhập họ tên/email/mật khẩu/xác nhận mật khẩu → kiểm tra hợp lệ
-  (email đúng định dạng, mật khẩu ≥ 6 ký tự, khớp xác nhận) → tạo tài khoản →
-  thông báo thành công → quay lại màn hình đăng nhập.
+<table>
+<tr>
+<td>
 
-### Trang chủ
-- Hiển thị danh sách thú cưng, việc cần làm hôm nay.
-- Chọn thú cưng để xem việc riêng của thú cưng đó, đánh dấu hoàn thành việc.
-- 4 nút truy cập nhanh: Thú cưng, Lịch, Bác sĩ thú y, Cá nhân.
+Xác thực và quên mật khẩu đang ở mức mô phỏng
 
-### Thú cưng
-- Xem danh sách → chọn 1 thú cưng → xem chi tiết (nước uống/khẩu phần/dị ứng)
-  → quay lại danh sách.
-- Thêm / chỉnh sửa / xóa thú cưng, có kiểm tra hợp lệ và hộp thoại xác nhận
-  khi xóa.
+Dữ liệu đang lưu trong bộ nhớ tạm
 
-### Lịch
-- Xem danh sách việc cần làm, chọn xem chi tiết.
-- Thêm / chỉnh sửa / xóa việc cần làm, có kiểm tra hợp lệ và xác nhận khi xóa.
-- Đánh dấu hoàn thành.
+Danh sách phòng khám là dữ liệu mẫu
 
-### Dịch vụ thú y
-- Xem & tìm kiếm phòng khám (theo tên, lọc gần nhất/đánh giá cao/mở 24 giờ).
-- Đặt lịch khám (chọn thú cưng, ngày, giờ, ghi chú), kiểm tra hợp lệ.
-- Chỉnh sửa lịch khám đã đặt.
-- Hủy lịch khám, có hộp thoại xác nhận.
-- Gọi SOS cấp cứu khẩn cấp, có hộp thoại xác nhận trước khi gọi.
+SOS chưa thực hiện cuộc gọi thật
 
-### Cá nhân
-- Xem/sửa thông tin, đổi ngôn ngữ Việt/Anh, xem thông tin nhóm thực hiện.
+Chưa tích hợp Maps, GPS, notification hoặc backend
 
----
+</td>
+</tr>
+</table>
 
-## 4. Phân công nhóm
+🌱 Hướng phát triển
 
-| Thành viên | Phụ trách |
-|---|---|
-| **Phạm Thế Duy** | Kiến trúc app (`state/`, `theme/`, `l10n/`, `widgets/`, `models/`) + màn hình **Lịch** (`calendar_screen.dart`) + **Dịch vụ thú y** (`services_screen.dart`) |
-| **[Tên thành viên B]** | Màn hình **Trang chủ** (`home_screen.dart`) + **Thú cưng** (`pet_profile_screen.dart`) |
-| **[Tên thành viên C]** | Màn hình **Đăng nhập** (`login_screen.dart`), **Đăng ký** (`register_screen.dart`), **Quên mật khẩu** (`forgot_password_screen.dart`), **Cá nhân** (`profile_screen.dart`) |
+<table>
+<tr>
+<td width="50%" valign="top">
 
-> Điền đúng họ tên + MSSV của 2 thành viên còn lại vào bảng trên trước khi nộp
-> bài, đồng thời cập nhật trong `lib/screens/team_info_screen.dart` (hằng số
-> `_members` và `_instructor` ở đầu file).
+Kết nối Firebase Authentication
 
----
+Lưu dữ liệu với Firestore hoặc REST API
 
-## 5. Quy trình làm việc nhóm (Git)
+Lưu phiên đăng nhập cục bộ
 
-- Nhánh `main`: code chạy ổn định.
-- Mỗi thành viên tạo nhánh riêng theo tính năng, ví dụ:
-  ```bash
-  git checkout -b feature/home-pet        # Trang chủ + Thú cưng
-  git checkout -b feature/login-profile   # Đăng nhập + Cá nhân
-  ```
-- Commit nhỏ, rõ ràng theo từng phần việc:
-  ```bash
-  git add lib/screens/home_screen.dart lib/screens/pet_profile_screen.dart
-  git commit -m "Hoàn thiện màn hình Trang chủ và Thú cưng"
-  git push -u origin feature/home-pet
-  ```
-- Tạo **Pull Request** trên GitHub vào `main`, nhờ 1 thành viên khác review
-  trước khi merge.
+Tích hợp bản đồ và định vị
 
----
+</td>
+<td width="50%" valign="top">
 
-## 6. Kiến trúc & luồng dữ liệu
+Thêm nhắc lịch chăm sóc
 
-- Không dùng package quản lý state ngoài (Provider/Riverpod/Bloc), dùng
-  `ChangeNotifier` (`AppState` trong `state/app_state.dart`) kết hợp
-  `AnimatedBuilder` để các màn hình tự cập nhật khi dữ liệu thay đổi.
-- `AppState` giữ danh sách `pets`, `tasks`, `appointments` dùng chung cho toàn
-  app, cùng các hàm CRUD tương ứng (`addPet`, `removePet`, `addTask`,
-  `removeTask`, `toggleTask`, `addAppointment`, `removeAppointment`...).
-- Điều hướng 5 tab dưới cùng dùng `ValueNotifier<int>` (`appState.navIndex`),
-  cho phép các màn hình khác (vd nút truy cập nhanh ở Trang chủ) chuyển tab
-  trực tiếp qua `appState.goToTab(index)`.
-- Đa ngôn ngữ: mọi chuỗi hiển thị lấy qua hàm `t('key')` trong
-  `l10n/app_strings.dart`, tự động đổi theo `appState.language` ('vi'/'en').
+Hỗ trợ ảnh thật của thú cưng
 
----
+Bổ sung dark mode
 
-## 7. Giới hạn / gợi ý làm tiếp
+Viết test tự động
 
-- Đăng nhập/đăng ký/quên mật khẩu hiện là demo (chưa gọi API thật, chưa lưu
-  phiên đăng nhập, chưa gửi email thật).
-- Dữ liệu thú cưng/việc cần làm/lịch khám lưu tạm trong bộ nhớ (mất khi tắt
-  app), cần backend + local storage thật để lưu lâu dài.
-- Danh sách phòng khám là dữ liệu mẫu tĩnh, chưa có bản đồ/định vị thật.
-- Cần backend thật để đồng bộ dữ liệu nhiều thiết bị, xác thực, push
-  notification.
+</td>
+</tr>
+</table>
 
----
+👩‍💻 Nhóm thực hiện
 
-## 8. Ghi chú kỹ thuật
+<table>
+<tr>
+<td><b>Phạm Thế Duy</b><br><code>24100583</code><br></td>
+<td><b>Phạm Thảo Hiền Vy</b><br><code>24100439</code><br></td>
+<td><b>Nguyễn Hoàng Nam</b><br><code>24100136</code><br></td>
+</tr>
+</table>
 
-- Package sử dụng: `table_calendar` (lịch), `intl` (định dạng ngày tháng),
-  `google_fonts` (font Baloo 2).
-- Đổi icon/ảnh thật cho thú cưng thay vì emoji: sửa trường `emoji` trong
-  `models/pet.dart` bằng `Image.asset(...)`.
-- File `.gitignore` đã loại trừ `build/`, `.dart_tool/` và các file cache khác,
-  không commit các thư mục này.
+<p align="center">
+  <strong>Made with 💖 for pet lovers</strong><br>
+  PawCare — soft routines, happier pets.
+</p>

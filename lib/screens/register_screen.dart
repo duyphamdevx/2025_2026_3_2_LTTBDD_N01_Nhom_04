@@ -206,4 +206,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: Text(t('register_button')),
                             ),
                           ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(t('have_account'),
+                                  style: const TextStyle(color: AppColors.textGrey)),
+                              GestureDetector(
+                                onTap: () => Navigator.of(context).pop(),
+                                child: Text(
+                                  t('login_button'),
+                                  style: const TextStyle(
+                                    color: AppColors.primaryOrangeDark,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 24),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
 

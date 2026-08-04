@@ -19,4 +19,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
    bool _isValidEmail(String value) {
     return RegExp(r'^[\w\.\-]+@[\w\-]+\.[\w\-\.]+$').hasMatch(value);
   }
+  void _sendRecoveryEmail() {
+    final email = _emailController.text.trim();
+    if (email.isEmpty) {
+      setState(() => _errorText = t('email_required'));
+      return;
+    }
 

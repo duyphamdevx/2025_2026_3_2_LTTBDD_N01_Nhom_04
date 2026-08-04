@@ -25,4 +25,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       setState(() => _errorText = t('email_required'));
       return;
     }
+    if (!_isValidEmail(email)) {
+      setState(() => _errorText = t('email_invalid'));
+      return;
+    }
+    setState(() => _errorText = null);
 

@@ -65,4 +65,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ],
         ),
         content: Text(t('register_success_desc')),
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // đóng dialog
+              Navigator.of(context).pop(); // quay lại màn hình đăng nhập
+            },
+            child: Text(t('back_to_login')),
+          ),
+        ],
+      ),
+    );
+  }
 

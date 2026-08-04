@@ -64,4 +64,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Expanded(child: Text(t('register_success_title'))),
           ],
         ),
+        content: Text(t('register_success_desc')),
 

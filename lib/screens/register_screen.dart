@@ -188,4 +188,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
+                          if (_errorText != null) ...[
+                            const SizedBox(height: 10),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                _errorText!,
+                                style: const TextStyle(color: AppColors.allergyRed, fontSize: 12),
+                              ),
+                            ),
+                          ],
+                          const SizedBox(height: 26),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: _register,
+                              child: Text(t('register_button')),
+                            ),
+                          ),
 

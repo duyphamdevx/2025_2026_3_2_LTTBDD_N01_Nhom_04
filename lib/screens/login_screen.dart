@@ -6,3 +6,10 @@ import '../widgets/bottom_nav.dart';
 import '../widgets/language_badge.dart';
 import 'register_screen.dart';
 import 'forgot_password_screen.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}

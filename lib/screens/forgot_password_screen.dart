@@ -63,3 +63,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     _emailController.dispose();
     super.dispose();
   }
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: appState,
+      builder: (context, _) {

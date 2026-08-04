@@ -158,5 +158,24 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   t('login_button'),
                                   style: const TextStyle(
                                     color: AppColors.primaryOrangeDark,
-                                    fontWeight: FontWeight.bold,    
+                                    fontWeight: FontWeight.bold,  
+                                   ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 24),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}   
 

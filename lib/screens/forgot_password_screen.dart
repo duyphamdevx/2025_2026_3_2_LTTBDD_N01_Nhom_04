@@ -147,4 +147,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ),
                           ),
                           const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(t('remember_password'),
+                                  style: const TextStyle(color: AppColors.textGrey)),
 

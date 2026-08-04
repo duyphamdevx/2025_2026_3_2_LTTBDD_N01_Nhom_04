@@ -50,3 +50,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const LanguageBadge(),
                   ),
                 ),
+                Center(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 28),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(height: 40),
+                        Container(
+                          width: 90,
+                          height: 90,
+                          decoration: BoxDecoration(
+                            gradient: AppColors.headerGradient,
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: const Icon(Icons.pets_rounded,
+                              color: Colors.white, size: 44),
+                        ),

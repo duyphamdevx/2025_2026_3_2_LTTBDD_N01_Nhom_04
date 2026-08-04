@@ -108,4 +108,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             t('forgot_password_title'),
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
+                          const SizedBox(height: 6),
+                          Text(
+                            t('forgot_password_subtitle'),
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(color: AppColors.textGrey),
+                          ),
 

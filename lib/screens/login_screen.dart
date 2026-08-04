@@ -32,3 +32,12 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
     super.dispose();
   }
+  
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: appState,
+      builder: (context, _) {
+        return Scaffold(
+          backgroundColor: AppColors.background,
+          body: SafeArea(

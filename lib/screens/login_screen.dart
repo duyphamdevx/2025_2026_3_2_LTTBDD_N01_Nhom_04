@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -41,3 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
         return Scaffold(
           backgroundColor: AppColors.background,
           body: SafeArea(
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 12, 20, 0),
+                    child: const LanguageBadge(),
+                  ),
+                ),

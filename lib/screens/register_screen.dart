@@ -137,4 +137,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             textAlign: TextAlign.center,
                             style: const TextStyle(color: AppColors.textGrey),
                           ),
+                          const SizedBox(height: 28),
+                          _FieldLabel(t('full_name')),
+                          TextField(
+                            controller: _nameController,
+                            decoration: InputDecoration(hintText: t('full_name_hint')),
+                          ),
+                          const SizedBox(height: 16),
+                          _FieldLabel(t('email')),
+                          TextField(
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: const InputDecoration(hintText: 'ban@email.com'),
+                          ),
 

@@ -18,3 +18,10 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
+
+  void _login() {
+    // Demo: chỉ cần bấm là vào thẳng app, không gọi API thật.
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const PawCareScaffold()),
+    );
+  }

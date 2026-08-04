@@ -91,4 +91,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     child: SingleChildScrollView(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              gradient: AppColors.headerGradient,
+                              borderRadius: BorderRadius.circular(22),
+                            ),
+                            child: const Icon(Icons.lock_reset_rounded,
+                                color: Colors.white, size: 40),
+                          ),
 

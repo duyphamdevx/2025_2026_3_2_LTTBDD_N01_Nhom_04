@@ -87,4 +87,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+@override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: appState,
+      builder: (context, _) {
+        return Scaffold(
+          backgroundColor: AppColors.background,
+          body: SafeArea(
 

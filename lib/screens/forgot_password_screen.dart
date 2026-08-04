@@ -146,4 +146,5 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               child: Text(t('send_reset_email_button')),
                             ),
                           ),
+                          const SizedBox(height: 20),
 

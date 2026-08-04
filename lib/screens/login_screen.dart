@@ -67,3 +67,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Icon(Icons.pets_rounded,
                               color: Colors.white, size: 44),
                         ),
+                        const SizedBox(height: 20),
+                        Text(
+                          t('login_title'),
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          t('login_subtitle'),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(color: AppColors.textGrey),
+                        ),

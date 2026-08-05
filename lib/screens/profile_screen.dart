@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../l10n/app_strings.dart';
 import '../state/app_state.dart';
@@ -17,6 +20,26 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   bool _notificationsOn = true;
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _pickAvatar() async {
+    try {
+      final XFile? file = await _picker.pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 85,
+        maxWidth: 1200,
+      );
+
+      if (file == null) return;
+
+      appState.updateOwnerAvatarPath(file.path);
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(t('avatar_pick_failed'))),
+      );
+    }
+  }
 
   void _openEditProfileSheet() {
     final nameController = TextEditingController(
@@ -112,39 +135,71 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       bottomRight: Radius.circular(28),
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              appState.ownerName,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              t('owner_label').replaceFirst(
-                                '{pets}',
-                                appState.petNamesLabel,
-                              ),
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          SizedBox.shrink(),
+                          LanguageBadge(
+                            background: Colors.white24,
+                            textColor: Colors.white,
+                          ),
+                        ],
                       ),
-                      const LanguageBadge(
-                        background: Colors.white24,
-                        textColor: Colors.white,
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: _pickAvatar,
+                            child: CircleAvatar(
+                              radius: 30,
+                              backgroundColor: Colors.white24,
+                              backgroundImage: appState.ownerAvatarPath != null
+                                  ? FileImage(File(appState.ownerAvatarPath!))
+                                  : null,
+                              child: appState.ownerAvatarPath == null
+                                  ? const Icon(Icons.person, color: Colors.white, size: 30)
+                                  : null,
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  appState.ownerName,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  t('owner_label').replaceFirst(
+                                    '{pets}',
+                                    appState.petNamesLabel,
+                                  ),
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  t('change_avatar'),
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -183,7 +238,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 12),
                       _MenuTile(
                         icon: Icons.notifications_rounded,
-                        iconColor: Colors.amber.shade700,
+                        iconColor: Colors.amber,
                         iconBg: Colors.amber.shade100,
                         label: t('notifications'),
                         trailing: Switch(

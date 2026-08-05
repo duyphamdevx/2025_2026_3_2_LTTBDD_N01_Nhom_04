@@ -242,6 +242,11 @@ const Map<String, Map<String, String>> _strings = {
   'logout': {'vi': 'Đăng xuất', 'en': 'Log out'},
   'your_name': {'vi': 'Tên của bạn', 'en': 'Your name'},
   'display_name_hint': {'vi': 'Tên hiển thị', 'en': 'Display name'},
+  'change_avatar': {'vi': 'Đổi ảnh đại diện', 'en': 'Change avatar'},
+  'avatar_pick_failed': {
+    'vi': 'Không thể chọn ảnh. Vui lòng thử lại.',
+    'en': 'Could not pick image. Please try again.',
+  },
   'about_app_desc': {
     'vi': 'Giúp bạn quản lý thú cưng, theo dõi lịch ăn uống, tiêm phòng, '
         'tìm phòng khám thú y và đặt lịch khám nhanh chóng.',

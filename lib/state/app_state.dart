@@ -8,9 +8,12 @@ import '../models/appointment.dart';
 /// nhật khi có thay đổi, không cần package quản lý state ngoài.
 class AppState extends ChangeNotifier {
   String ownerName = 'Nhi';
+  String? _ownerAvatarPath;
   final List<Pet> pets = List.of(samplePets);
   final List<PetTask> tasks = List.of(sampleTasks);
   final List<Appointment> appointments = [];
+
+  String? get ownerAvatarPath => _ownerAvatarPath;
 
   /// Ngôn ngữ hiện tại của ứng dụng: 'vi' (Tiếng Việt) hoặc 'en' (English).
   String language = 'vi';
@@ -82,6 +85,11 @@ class AppState extends ChangeNotifier {
   void updateOwnerName(String name) {
     if (name.trim().isEmpty) return;
     ownerName = name.trim();
+    notifyListeners();
+  }
+
+  void updateOwnerAvatarPath(String? path) {
+    _ownerAvatarPath = path;
     notifyListeners();
   }
 

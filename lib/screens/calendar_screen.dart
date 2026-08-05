@@ -35,9 +35,24 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _selectedDay = _focusedDay;
   }
 
+  // Helper: parse a simple "HH:mm" string into TimeOfDay.
+  TimeOfDay _parseTimeOfDayFromString(String t) {
+    final parts = t.split(':');
+    if (parts.length >= 2) {
+      final h = int.tryParse(parts[0]) ?? 0;
+      final m = int.tryParse(parts[1]) ?? 0;
+      return TimeOfDay(hour: h, minute: m);
+    }
+    return TimeOfDay.now();
+  }
+
   void _openTaskForm({PetTask? existing}) {
     final titleController = TextEditingController(text: existing?.title ?? '');
-    TimeOfDay pickedTime = TimeOfDay.now();
+    // Preserve existing task time when editing (instead of losing it and
+    // writing TimeOfDay.now()).
+    TimeOfDay pickedTime = existing != null
+        ? _parseTimeOfDayFromString(existing.time)
+        : TimeOfDay.now();
     String selectedEmoji = existing?.emoji ?? _emojiChoices.first;
     String? errorText;
 
@@ -254,6 +269,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       _selectedDay = selectedDay;
                       _focusedDay = focusedDay;
                     });
+                  },
+                  // Update focused month when user pages the calendar (chevrons/swipe)
+                  onPageChanged: (focusedDay) {
+                    setState(() => _focusedDay = focusedDay);
                   },
                   startingDayOfWeek: StartingDayOfWeek.monday,
                   calendarStyle: CalendarStyle(

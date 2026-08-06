@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="" alt="PawCare Banner" width="100%" />
-</p>
+
 
 <h1 align="center">🐾 PawCare</h1>
 
